@@ -1,103 +1,171 @@
-import Image from "next/image";
+"use client";
 
-export default function Home() {
+import Link from "next/link";
+import { useEffect, useRef } from "react";
+import Header from "@/components/header";
+
+export default function HomePage() {
+  const sobreRef = useRef(null);
+  const publicacoesRef = useRef(null);
+  const localRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("opacity-100");
+          } else {
+            entry.target.classList.remove("opacity-100");
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    if (sobreRef.current) observer.observe(sobreRef.current);
+    if (publicacoesRef.current) observer.observe(publicacoesRef.current);
+    if (localRef.current) observer.observe(localRef.current);
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <div>
+      <div className="space-y-8">
+        {/* Hero Section with Glassmorphism */}
+        <div
+          className="
+          w-full max-w-7xl mx-auto flex flex-col p-6 sm:p-8 md:p-10 min-h-[90vh]
+          bg-black/25 backdrop-blur-md 
+          border border-white/20 
+          rounded-2xl shadow-lg
+          hover:bg-black/30 hover:shadow-2xl hover:scale-[1.02] transition-all duration-500"
+        >
+          {/* 1. Cabeçalho */}
+          <Header />
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+          {/* 2. Conteúdo Principal (Hero Section) */}
+          <section className="flex-grow flex items-center w-full">
+            <div className="flex flex-col md:flex-row items-center gap-8 md:gap-16">
+              {/* Tags Verticais - como na imagem de referência */}
+              <div className="hidden md:flex flex-col gap-4 text-sm text-white/70">
+                <span className="hover:text-white hover:scale-110 transition-all duration-500 cursor-pointer">
+                  Pesquisa
+                </span>
+                <span className="hover:text-white hover:scale-110 transition-all duration-500 cursor-pointer">
+                  Conservação
+                </span>
+                <span className="hover:text-white hover:scale-110 transition-all duration-500 cursor-pointer">
+                  Comunidade
+                </span>
+              </div>
+
+              {/* Texto Principal */}
+              <div className="text-center md:text-left">
+                <h2 className="text-5xl md:text-7xl font-bold tracking-tight text-white leading-tight hover:text-yellow-200 transition-colors duration-500">
+                  Preservando o Coração de Santa Catarina
+                </h2>
+                <p className="mt-4 max-w-xl text-white/80 hover:text-white/90 transition-colors duration-500">
+                  Uma jornada no coração da Mata Atlântica para encontrar a
+                  incrível diversidade que o Parque Estadual da Serra do
+                  Tabuleiro abriga. Explore o trabalho da nossa organização.
+                </p>
+                <button className="mt-8 px-8 py-3 bg-white/10 border border-white/30 rounded-full hover:bg-white/20 hover:scale-105 hover:shadow-lg transition-all duration-500 cursor-pointer">
+                  Saiba Mais
+                </button>
+              </div>
+            </div>
+          </section>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+
+        {/* Sobre Section with Glassmorphism */}
+        <div
+          ref={sobreRef}
+          className="
+          w-full max-w-7xl mx-auto p-6 sm:p-8 md:p-10
+          bg-black/25 backdrop-blur-md 
+          border border-white/20 
+          rounded-2xl shadow-lg
+          opacity-0 transition-opacity duration-500
+           hover:bg-black/30 hover:shadow-2xl hover:scale-[1.02] transition-all duration-500"
         >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+          <h2 className="text-center text-3xl font-bold text-white mb-6 hover:text-yellow-200 transition-colors duration-500">
+            Sobre o Instituto
+          </h2>
+          <p className="text-center text-white/80 mb-8 hover:text-white/90 transition-colors duration-500">
+            O Instituto Tabuleiro é uma organização não governamental dedicada à
+            preservação e conservação do Parque Estadual da Serra do Tabuleiro,
+            desenvolvendo atividades de pesquisa científica, uso público
+            sustentável, educação ambiental e mobilização comunitária.
+          </p>
+          <div className="text-center">
+            <Link
+              href="/sobre"
+              className="px-8 py-3 bg-white/10 border border-white/30 rounded-full hover:bg-white/20 hover:scale-105 hover:shadow-lg transition-all duration-500 text-white hover:text-yellow-200"
+            >
+              Saiba Mais Sobre Nós
+            </Link>
+          </div>
+        </div>
+
+        {/* Publicações Section with Glassmorphism */}
+        <div
+          ref={publicacoesRef}
+          className="
+          w-full max-w-7xl mx-auto p-6 sm:p-8 md:p-10
+          bg-black/25 backdrop-blur-md 
+          border border-white/20 
+          rounded-2xl shadow-lg
+          opacity-0 transition-opacity duration-500
+           hover:bg-black/30 hover:shadow-2xl hover:scale-[1.02] transition-all duration-500"
         >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+          <h2 className="text-center text-3xl font-bold text-white mb-6 hover:text-yellow-200 transition-colors duration-500">
+            Publicações
+          </h2>
+          <p className="text-center text-white/80 mb-8 hover:text-white/90 transition-colors duration-500">
+            Explore nossos estudos, relatórios e publicações científicas sobre a
+            conservação do Parque Estadual da Serra do Tabuleiro.
+          </p>
+          <div className="text-center">
+            <Link
+              href="/publicacoes"
+              className="px-8 py-3 bg-white/10 border border-white/30 rounded-full hover:bg-white/20 hover:scale-105 hover:shadow-lg transition-all duration-500 text-white hover:text-yellow-200"
+            >
+              Ver Publicações
+            </Link>
+          </div>
+        </div>
+
+        {/* Localização Section with Glassmorphism */}
+        <div
+          ref={localRef}
+          className="
+          w-full max-w-7xl mx-auto p-6 sm:p-8 md:p-10
+          bg-black/25 backdrop-blur-md 
+          border border-white/20 
+          rounded-2xl shadow-lg
+          opacity-0 transition-opacity duration-500
+           hover:bg-black/30 hover:shadow-2xl hover:scale-[1.02] transition-all duration-500"
         >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+          <h2 className="text-center text-3xl font-bold text-white mb-6 hover:text-yellow-200 transition-colors duration-500">
+            Localização
+          </h2>
+          <p className="text-center text-white/80 mb-8 hover:text-white/90 transition-colors duration-500">
+            O Parque Estadual da Serra do Tabuleiro está localizado no coração
+            de Santa Catarina, abrangendo uma área de 84.130 hectares de Mata
+            Atlântica.
+          </p>
+          <div className="text-center">
+            <Link
+              href="/local"
+              className="px-8 py-3 bg-white/10 border border-white/30 rounded-full hover:bg-white/20 hover:scale-105 hover:shadow-lg transition-all duration-500 text-white hover:text-yellow-200"
+            >
+              Ver Localização
+            </Link>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
