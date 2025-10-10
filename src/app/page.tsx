@@ -4,11 +4,12 @@ import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import Header from "@/components/header";
 import Tucan from "@/components/tucan";
+import scrollIntoView from "scroll-into-view-if-needed";
 
 export default function HomePage() {
-  const sobreRef = useRef(null);
-  const publicacoesRef = useRef(null);
-  const localRef = useRef(null);
+  const sobreRef = useRef<HTMLDivElement>(null);
+  const publicacoesRef = useRef<HTMLDivElement>(null);
+  const localRef = useRef<HTMLDivElement>(null);
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -82,7 +83,10 @@ export default function HomePage() {
                   incrível diversidade que o Parque Estadual da Serra do
                   Tabuleiro abriga. Explore o trabalho da nossa organização.
                 </p>
-                <button className="mt-8 px-8 py-3 bg-white/10 border border-white/30 rounded-full hover:bg-white/20 hover:scale-105 hover:shadow-lg transition-all duration-500 cursor-pointer">
+                <button 
+                  className="mt-8 px-8 py-3 bg-white/10 border border-white/30 rounded-full hover:bg-white/20 hover:scale-105 hover:shadow-lg transition-all duration-500 cursor-pointer"
+                  onClick={() => sobreRef.current && scrollIntoView(sobreRef.current, { behavior: 'smooth' })}
+                >
                   Saiba Mais
                 </button>
               </div>

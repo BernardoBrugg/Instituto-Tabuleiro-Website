@@ -23,21 +23,24 @@ function TucanModel() {
 
   useFrame(() => {
     if (meshRef.current) {
-      meshRef.current.rotation.y = mousePos.x * Math.PI / 2
-      meshRef.current.rotation.x = mousePos.y * Math.PI / 2
+      // Adjusted rotation to make the nozzle (beak) follow the mouse more responsively
+      meshRef.current.rotation.y = mousePos.x * Math.PI
+      meshRef.current.rotation.x = -mousePos.y * Math.PI/3
     }
   })
 
-  return <primitive ref={meshRef} object={scene} scale={[5, 5, 5]} />
+  // Adjusted scale to fit the toucan within the div
+  return <primitive ref={meshRef} object={scene} scale={[4, 4, 4]} />
 }
 
 export default function Tucan() {
   return (
     <div style={{ height: '400px', width: '400px' }}>
       <Canvas camera={{ position: [0, 0, 5] }}>
-        <ambientLight intensity={2} />
-        <directionalLight position={[10, 10, 10]} intensity={3} />
-        <pointLight position={[10, 10, 10]} intensity={3} />
+        {/* Increased light intensities to make it brighter */}
+        <ambientLight intensity={8} />
+        <directionalLight position={[10, 10, 10]} intensity={4} />
+        <pointLight position={[10, 10, 10]} intensity={4} />
         <TucanModel />
       </Canvas>
     </div>

@@ -1,8 +1,8 @@
 "use client";
 
 import { useParams } from "next/navigation";
-import { useEffect, useState } from "react";
 import Header from "@/components/header";
+import Image from "next/image";
 
 const publications = [
   {
@@ -34,28 +34,7 @@ const publications = [
 export default function PublicationDetailPage() {
   const params = useParams();
   const id = parseInt(params.id as string, 10);
-  const [publication, setPublication] = useState(null);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const fetchPublication = () => {
-      const found = publications.find((pub) => pub.id === id);
-      setPublication(found);
-      setLoading(false);
-    };
-    fetchPublication();
-  }, [id]);
-
-  if (loading) {
-    return (
-      <div className="min-h-screen bg-gradient-to-br from-green-900 via-blue-900 to-purple-900 flex items-center justify-center">
-        <Header />
-        <div className="text-center text-white">
-          <p>Carregando publicação...</p>
-        </div>
-      </div>
-    );
-  }
+  const publication = publications.find((pub) => pub.id === id);
 
   if (!publication) {
     return (
@@ -73,18 +52,17 @@ export default function PublicationDetailPage() {
     <div className="min-h-screen bg-gradient-to-br from-green-900 via-blue-900 to-purple-900">
       <Header />
       <div className="max-w-4xl mx-auto p-6 sm:p-8 md:p-10">
-        <div className="bg-black/25 backdrop-blur-md border border-white/20 rounded-2xl shadow-lg p-8 hover:bg-black/30 transition-all duration-500">
-          <img
+          <Image
             src={publication.image}
             alt={publication.title}
+            width={800}
+            height={256}
             className="w-full h-64 object-cover rounded-lg mb-6"
           />
           <h1 className="text-4xl font-bold text-white mb-4">{publication.title}</h1>
           <p className="text-white/80 mb-4">{publication.description}</p>
           <p className="text-white/60">Publicado em: {new Date(publication.date).toLocaleDateString("pt-BR")}</p>
-          {/* Add more content like full article, download link, etc. */}
         </div>
       </div>
-    </div>
   );
 }
