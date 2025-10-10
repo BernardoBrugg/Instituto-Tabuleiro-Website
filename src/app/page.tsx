@@ -1,13 +1,24 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Header from "@/components/header";
+import Tucan from "@/components/tucan";
 
 export default function HomePage() {
   const sobreRef = useRef(null);
   const publicacoesRef = useRef(null);
   const localRef = useRef(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -75,6 +86,13 @@ export default function HomePage() {
                   Saiba Mais
                 </button>
               </div>
+
+              {/* 3D Tucan Model */}
+              {!isMobile && (
+                <div className="flex-shrink-0">
+                  <Tucan />
+                </div>
+              )}
             </div>
           </section>
         </div>

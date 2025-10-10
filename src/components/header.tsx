@@ -1,4 +1,7 @@
+"use client";
+
 import Image from 'next/image';
+import { useState } from 'react';
 
 export default function Header() {
   const navLinks = [
@@ -7,6 +10,8 @@ export default function Header() {
     { name: 'Publicações', href: '/publicacoes' },
     { name: 'Localização', href: '/local' },
   ];
+
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <header className="flex items-center justify-between w-full">
@@ -21,6 +26,22 @@ export default function Header() {
           </a>
         ))}
       </nav>
+      <div className="md:hidden relative">
+        <button onClick={() => setIsOpen(!isOpen)} className="flex flex-col items-center justify-center w-8 h-8">
+          <span className="block w-6 h-0.5 bg-white mb-1 transition-all duration-300"></span>
+          <span className="block w-6 h-0.5 bg-white mb-1 transition-all duration-300"></span>
+          <span className="block w-6 h-0.5 bg-white transition-all duration-300"></span>
+        </button>
+        {isOpen && (
+          <div className="absolute top-full left-0 mt-2 bg-white border border-gray-300 rounded-lg p-4 flex flex-col gap-4 z-50">
+            {navLinks.map((link) => (
+              <a key={link.name} href={link.href} className="text-sm text-black hover:text-yellow-500 transition-colors duration-300" onClick={() => setIsOpen(false)}>
+                {link.name}
+              </a>
+            ))}
+          </div>
+        )}
+      </div>
       <a 
         href="contato" 
         className="px-5 py-2 text-sm border border-white/50 rounded-full hover:bg-white/20 hover:scale-105 hover:shadow-lg hover:text-yellow-500 transition-all duration-500 ease-in-out cursor-pointer"
