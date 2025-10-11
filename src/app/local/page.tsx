@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { useEffect, useRef } from "react";
 import Header from "@/components/header";
 import LocalizationModal from "@/components/localizationModal";
@@ -78,7 +77,6 @@ export default function LocalPage() {
           </div>
         </div>
 
-        {/* Como Chegar Section with Glassmorphism */}
         <div
           ref={comoChegarRef}
           className="
