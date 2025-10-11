@@ -1,12 +1,12 @@
 'use client'
 
 import { Canvas, useFrame } from '@react-three/fiber'
-import { useGLTF } from '@react-three/drei'
+import { useGLTF, Html } from '@react-three/drei'
 import { useRef, useState, useEffect } from 'react'
 import * as THREE from 'three'
 
 function TucanModel() {
-  const { scene } = useGLTF('/toucan+3d+model.glb')
+  const { scene } = useGLTF('/toucan+3d+model.glb', false) // Disable suspense to handle loading manually
   const meshRef = useRef<THREE.Group>(null)
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 })
 
@@ -29,6 +29,10 @@ function TucanModel() {
     }
   })
 
+  if (!scene) {
+    return <Html center><div className="text-white">Loading 3D Model...</div></Html>
+  }
+
   // Adjusted scale to fit the toucan within the div
   return <primitive ref={meshRef} object={scene} scale={[4, 4, 4]} />
 }
@@ -36,7 +40,7 @@ function TucanModel() {
 export default function Tucan() {
   return (
     <div style={{ height: '400px', width: '400px' }}>
-      <Canvas camera={{ position: [0, 0, 5] }}>
+      <Canvas camera={{ position: [0, 0, 5] }} style={{ height: '100%', width: '100%' }}>
         {/* Increased light intensities to make it brighter */}
         <ambientLight intensity={8} />
         <directionalLight position={[10, 10, 10]} intensity={4} />

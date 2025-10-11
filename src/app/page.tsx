@@ -34,6 +34,7 @@ export default function HomePage() {
       },
       { threshold: 0.1 }
     );
+    
 
     if (sobreRef.current) observer.observe(sobreRef.current);
     if (publicacoesRef.current) observer.observe(publicacoesRef.current);
@@ -45,22 +46,17 @@ export default function HomePage() {
   return (
     <div>
       <div className="space-y-8">
-        {/* Hero Section with Glassmorphism */}
         <div
           className="
-          w-full max-w-7xl mx-auto flex flex-col p-6 sm:p-8 md:p-10 min-h-[90vh]
+          w-full max-w-7xl mx-auto flex flex-col p-6 sm:p-8 md:p-10 min-h-[60vh]
           bg-black/25 backdrop-blur-md 
           border border-white/20 
           rounded-2xl shadow-lg
           hover:bg-black/30 hover:shadow-2xl hover:scale-[1.02] transition-all duration-500"
         >
-          {/* 1. Cabeçalho */}
           <Header />
-
-          {/* 2. Conteúdo Principal (Hero Section) */}
           <section className="flex-grow flex items-center w-full">
             <div className="flex flex-col md:flex-row items-center gap-8 md:gap-16">
-              {/* Tags Verticais - como na imagem de referência */}
               <div className="hidden md:flex flex-col gap-4 text-sm text-white/70">
                 <span className="hover:text-white hover:scale-110 transition-all duration-500 cursor-pointer">
                   Pesquisa
@@ -73,7 +69,6 @@ export default function HomePage() {
                 </span>
               </div>
 
-              {/* Texto Principal */}
               <div className="text-center md:text-left">
                 <h2 className="text-5xl md:text-7xl font-bold tracking-tight text-white leading-tight hover:text-yellow-200 transition-colors duration-500">
                   Preservando o Coração de Santa Catarina
@@ -91,7 +86,6 @@ export default function HomePage() {
                 </button>
               </div>
 
-              {/* 3D Tucan Model */}
               {!isMobile && (
                 <div className="flex-shrink-0">
                   <Tucan />
@@ -101,7 +95,6 @@ export default function HomePage() {
           </section>
         </div>
 
-        {/* Sobre Section with Glassmorphism */}
         <div
           ref={sobreRef}
           className="
@@ -131,7 +124,6 @@ export default function HomePage() {
           </div>
         </div>
 
-        {/* Publicações Section with Glassmorphism */}
         <div
           ref={publicacoesRef}
           className="
@@ -159,7 +151,6 @@ export default function HomePage() {
           </div>
         </div>
 
-        {/* Localização Section with Glassmorphism */}
         <div
           ref={localRef}
           className="
