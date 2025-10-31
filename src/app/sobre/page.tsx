@@ -89,11 +89,11 @@ export default function SobrePage() {
             </div>
             <div className="bg-white/10 p-8 rounded-lg text-left border border-white/20">
               <blockquote className="text-white/80 italic border-l-4 border-white/50 pl-4 hover:text-white/90 transition-colors duration-500">
-                "A topografia acidentada das montanhas, que se elevam até 1.250
+                &quot;A topografia acidentada das montanhas, que se elevam até 1.250
                 m, e a baixada, de formação quaternária, com inúmeros cordões de
                 restinga, a orla marítima, composta de belíssimas praias e ilhas
                 oceânicas compõem um quadro que, dificilmente, encontra similar
-                no mundo"
+                no mundo&quot;
                 <cite className="block mt-2 text-white/60">
                   Pe. Raulino Reitz, Decreto de Criação do Parque 1975
                 </cite>
