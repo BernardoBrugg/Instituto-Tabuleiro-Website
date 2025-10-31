@@ -35,7 +35,6 @@ export default function SobrePage() {
   return (
     <div>
       <div className="space-y-8">
-        {/* Hero Section with Glassmorphism */}
         <div
           className="
           w-full max-w-7xl mx-auto flex flex-col p-6 sm:p-8 md:p-10 min-h-[20vh]
@@ -44,11 +43,10 @@ export default function SobrePage() {
           rounded-2xl shadow-lg
           hover:bg-black/30 hover:shadow-2xl hover:scale-[1.02] transition-all duration-500"
         >
-          {/* 1. Cabeçalho */}
           <Header />
 
           <div className="flex-grow flex flex-col items-center justify-center text-center">
-            <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-white leading-tight hover:text-yellow-400 transition-colors duration-500">
+            <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-white leading-tight hover:text-white hover:scale-105 transition-all duration-500 cursor-pointer">
               Sobre o Instituto Tabuleiro
             </h1>
             <p className="mt-4 max-w-xl text-white/80 hover:text-white/90 transition-colors duration-500">
@@ -58,7 +56,6 @@ export default function SobrePage() {
           </div>
         </div>
 
-        {/* Nossa História Section with Glassmorphism */}
         <div
           ref={historiaRef}
           className="
@@ -69,50 +66,42 @@ export default function SobrePage() {
           opacity-0 transition-opacity duration-500
           hover:bg-black/30 hover:shadow-2xl hover:scale-[1.02] transition-all duration-500"
         >
-          <h2 className="text-center text-3xl font-bold text-white mb-6 hover:text-yellow-400 transition-colors duration-500">
+          <h2 className="text-center text-3xl font-bold text-white mb-6 hover:text-white hover:scale-105 transition-all duration-500 cursor-pointer">
             Nossa História
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>
               <p className="text-white/80 mb-6 hover:text-white/90 transition-colors duration-500">
-                Fundado em 1975, o Instituto Tabuleiro surgiu da necessidade de
-                proteger o Parque Estadual da Serra do Tabuleiro, um dos últimos
-                remanescentes da Mata Atlântica no Brasil.
+                A Associação para a Conservação do Parque Estadual da Serra do
+                Tabuleiro - Instituto Tabuleiro - foi constituída em 1 de
+                novembro de 2015, reunindo profissionais de diversas áreas de
+                conhecimento que atuam há mais de 20 anos nas áreas de pesquisa
+                científica, uso público, educação ambiental e mobilização
+                comunitária no território abrangido pelo Parque Estadual da
+                Serra do Tabuleiro e entorno.
               </p>
               <p className="text-white/80 mb-6 hover:text-white/90 transition-colors duration-500">
-                Ao longo das décadas, desenvolvemos projetos de pesquisa,
-                educação ambiental e mobilização comunitária, contribuindo para
-                a conservação de 84.130 hectares de floresta nativa.
-              </p>
-              <p className="text-white/80 mb-6 hover:text-white/90 transition-colors duration-500">
-                Nossa trajetória é marcada por parcerias com instituições
-                científicas, governos e comunidades locais, sempre com o foco na
-                sustentabilidade e no desenvolvimento regional.
+                Nosso objetivo de criação foi reunir em uma mesma Instituição um
+                coletivo de profissionais experientes e com vasta atuação dentro
+                de um território específico. Nossa missão é auxiliar a gestão do
+                Parque e promover a conservação de seus ecossistemas naturais.
               </p>
             </div>
-            <div className="bg-white/10 p-8 rounded-lg text-center border border-white/20">
-              <h3 className="text-white mb-4 hover:text-yellow-400 transition-colors duration-500">
-                Fatos Importantes
-              </h3>
-              <ul className="text-left leading-loose text-white/80">
-                <li>
-                  <strong>Fundação:</strong> 1975
-                </li>
-                <li>
-                  <strong>Área Protegida:</strong> 84.130 ha
-                </li>
-                <li>
-                  <strong>Ecossistema:</strong> Mata Atlântica
-                </li>
-                <li>
-                  <strong>Missões Anuais:</strong> +50 projetos
-                </li>
-              </ul>
+            <div className="bg-white/10 p-8 rounded-lg text-left border border-white/20">
+              <blockquote className="text-white/80 italic border-l-4 border-white/50 pl-4 hover:text-white/90 transition-colors duration-500">
+                "A topografia acidentada das montanhas, que se elevam até 1.250
+                m, e a baixada, de formação quaternária, com inúmeros cordões de
+                restinga, a orla marítima, composta de belíssimas praias e ilhas
+                oceânicas compõem um quadro que, dificilmente, encontra similar
+                no mundo"
+                <cite className="block mt-2 text-white/60">
+                  Pe. Raulino Reitz, Decreto de Criação do Parque 1975
+                </cite>
+              </blockquote>
             </div>
           </div>
         </div>
 
-        {/* Missão, Visão e Valores Section with Glassmorphism */}
         <div
           ref={missaoRef}
           className="
@@ -123,22 +112,21 @@ export default function SobrePage() {
           opacity-0 transition-opacity duration-500
           hover:bg-black/30 hover:shadow-2xl hover:scale-[1.02] transition-all duration-500"
         >
-          <h2 className="text-center text-3xl font-bold text-white mb-12 hover:text-yellow-400 transition-colors duration-500">
+          <h2 className="text-center text-3xl font-bold text-white mb-12 hover:text-white hover:scale-105 transition-all duration-500 cursor-pointer">
             Missão, Visão e Valores
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             <div className="p-8 bg-white/10 rounded-lg border border-white/20 hover:bg-white/20 transition-all duration-500">
-              <h3 className="text-white mb-4 text-xl font-semibold hover:text-yellow-400 transition-colors duration-500">
+              <h3 className="text-white mb-4 text-xl font-semibold hover:text-white hover:scale-105 transition-all duration-500 cursor-pointer">
                 Missão
               </h3>
               <p className="text-white/80 hover:text-white/90 transition-colors duration-500">
-                Preservar e conservar o Parque Estadual da Serra do Tabuleiro
-                através de pesquisa científica, educação ambiental e mobilização
-                comunitária sustentável.
+                Auxiliar a gestão do Parque e promover a conservação de seus
+                ecossistemas naturais.
               </p>
             </div>
             <div className="p-8 bg-white/10 rounded-lg border border-white/20 hover:bg-white/20 transition-all duration-500">
-              <h3 className="text-white mb-4 text-xl font-semibold hover:text-yellow-400 transition-colors duration-500">
+              <h3 className="text-white mb-4 text-xl font-semibold hover:text-white hover:scale-105 transition-all duration-500 cursor-pointer">
                 Visão
               </h3>
               <p className="text-white/80 hover:text-white/90 transition-colors duration-500">
@@ -148,7 +136,7 @@ export default function SobrePage() {
               </p>
             </div>
             <div className="p-8 bg-white/10 rounded-lg border border-white/20 hover:bg-white/20 transition-all duration-500">
-              <h3 className="text-white mb-4 text-xl font-semibold hover:text-yellow-400 transition-colors duration-500">
+              <h3 className="text-white mb-4 text-xl font-semibold hover:text-white hover:scale-105 transition-all duration-500 cursor-pointer">
                 Valores
               </h3>
               <p className="text-white/80 hover:text-white/90 transition-colors duration-500">
@@ -159,7 +147,6 @@ export default function SobrePage() {
           </div>
         </div>
 
-        {/* Nossa Equipe Section with Glassmorphism */}
         <div
           ref={equipeRef}
           className="
@@ -170,52 +157,61 @@ export default function SobrePage() {
           opacity-0 transition-opacity duration-500
           hover:bg-black/30 hover:shadow-2xl hover:scale-[1.02] transition-all duration-500"
         >
-          <h2 className="text-center text-3xl font-bold text-white mb-12 hover:text-yellow-400 transition-colors duration-500">
+          <h2 className="text-center text-3xl font-bold text-white mb-12 hover:text-white hover:scale-105 transition-all duration-500 cursor-pointer">
             Nossa Equipe
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="text-center p-6 bg-white/10 rounded-lg border border-white/20 hover:bg-white/20 transition-all duration-500">
-              <div className="w-24 h-24 bg-white/20 rounded-full mx-auto mb-4 flex items-center justify-center border border-white/30">
-                <span className="text-2xl">👤</span>
-              </div>
-              <h3 className="text-white font-semibold hover:text-yellow-400 transition-colors duration-500">
-                Dr. João Silva
+              <h3 className="text-white font-semibold hover:text-white hover:scale-105 transition-all duration-500 cursor-pointer">
+                Marcos Adriano Tortato
               </h3>
-              <p className="text-white/80">Diretor Executivo</p>
-              <p className="text-sm mt-2 text-white/80 hover:text-white/90 transition-colors duration-500">
-                Especialista em Ecologia, com 20 anos de experiência em
-                conservação.
-              </p>
+              <p className="text-white/80">Presidente</p>
             </div>
             <div className="text-center p-6 bg-white/10 rounded-lg border border-white/20 hover:bg-white/20 transition-all duration-500">
-              <div className="w-24 h-24 bg-white/20 rounded-full mx-auto mb-4 flex items-center justify-center border border-white/30">
-                <span className="text-2xl">👤</span>
-              </div>
-              <h3 className="text-white font-semibold hover:text-yellow-400 transition-colors duration-500">
-                Maria Santos
+              <h3 className="text-white font-semibold hover:text-white hover:scale-105 transition-all duration-500 cursor-pointer">
+                Jorge José Cherem
               </h3>
-              <p className="text-white/80">Coordenadora de Educação</p>
-              <p className="text-sm mt-2 text-white/80 hover:text-white/90 transition-colors duration-500">
-                Pedagoga especializada em educação ambiental e mobilização
-                comunitária.
-              </p>
+              <p className="text-white/80">Vice Presidente</p>
             </div>
             <div className="text-center p-6 bg-white/10 rounded-lg border border-white/20 hover:bg-white/20 transition-all duration-500">
-              <div className="w-24 h-24 bg-white/20 rounded-full mx-auto mb-4 flex items-center justify-center border border-white/30">
-                <span className="text-2xl">👤</span>
-              </div>
-              <h3 className="text-white font-semibold hover:text-yellow-400 transition-colors duration-500">
-                Carlos Oliveira
+              <h3 className="text-white font-semibold hover:text-white hover:scale-105 transition-all duration-500 cursor-pointer">
+                Haliskarla Moreira de Sá
               </h3>
-              <p className="text-white/80">Pesquisador Sênior</p>
-              <p className="text-sm mt-2 text-white/80 hover:text-white/90 transition-colors duration-500">
-                Biológo com foco em biodiversidade da Mata Atlântica.
-              </p>
+              <p className="text-white/80">Secretária Executiva</p>
+            </div>
+            <div className="text-center p-6 bg-white/10 rounded-lg border border-white/20 hover:bg-white/20 transition-all duration-500">
+              <h3 className="text-white font-semibold hover:text-white hover:scale-105 transition-all duration-500 cursor-pointer">
+                Mônica Araújo de Miranda Gomes
+              </h3>
+              <p className="text-white/80">Conselheira Consultiva</p>
+            </div>
+            <div className="text-center p-6 bg-white/10 rounded-lg border border-white/20 hover:bg-white/20 transition-all duration-500">
+              <h3 className="text-white font-semibold hover:text-white hover:scale-105 transition-all duration-500 cursor-pointer">
+                Mariama Brod Bacci
+              </h3>
+              <p className="text-white/80">Conselheira Consultiva</p>
+            </div>
+            <div className="text-center p-6 bg-white/10 rounded-lg border border-white/20 hover:bg-white/20 transition-all duration-500">
+              <h3 className="text-white font-semibold hover:text-white hover:scale-105 transition-all duration-500 cursor-pointer">
+                André Ivan Tortato
+              </h3>
+              <p className="text-white/80">Conselheiro Fiscal</p>
+            </div>
+            <div className="text-center p-6 bg-white/10 rounded-lg border border-white/20 hover:bg-white/20 transition-all duration-500">
+              <h3 className="text-white font-semibold hover:text-white hover:scale-105 transition-all duration-500 cursor-pointer">
+                Fernando Maciel Bruggemann
+              </h3>
+              <p className="text-white/80">Conselheiro Fiscal</p>
+            </div>
+            <div className="text-center p-6 bg-white/10 rounded-lg border border-white/20 hover:bg-white/20 transition-all duration-500">
+              <h3 className="text-white font-semibold hover:text-white hover:scale-105 transition-all duration-500 cursor-pointer">
+                Hugo Borghezan Mozerle
+              </h3>
+              <p className="text-white/80">Conselheiro Fiscal</p>
             </div>
           </div>
         </div>
 
-        {/* Contato Section with Glassmorphism */}
         <div
           ref={contatoRef}
           className="
@@ -227,7 +223,7 @@ export default function SobrePage() {
           hover:bg-black/30 hover:shadow-2xl hover:scale-[1.02] transition-all duration-500"
         >
           <div className="text-center">
-            <h2 className="text-3xl font-bold text-white mb-4 hover:text-yellow-400 transition-colors duration-500">
+            <h2 className="text-3xl font-bold text-white mb-4 hover:text-white hover:scale-105 transition-all duration-500 cursor-pointer">
               Entre em Contato
             </h2>
             <p className="mb-8 text-white/80 hover:text-white/90 transition-colors duration-500">
@@ -237,13 +233,13 @@ export default function SobrePage() {
             <div className="flex gap-4 justify-center flex-wrap">
               <Link
                 href="/contato"
-                className="px-8 py-3 bg-white/10 border border-white/30 rounded-full hover:bg-white/20 hover:scale-105 hover:shadow-lg transition-all duration-500 text-white hover:text-yellow-400"
+                className="px-8 py-3 bg-white/10 border border-white/30 rounded-full hover:bg-white/20 hover:scale-105 hover:shadow-lg transition-all duration-500 text-white hover:text-white cursor-pointer"
               >
                 Fale Conosco
               </Link>
               <Link
                 href="/"
-                className="px-8 py-3 bg-transparent border border-white/30 rounded-full hover:bg-white/20 hover:scale-105 hover:shadow-lg transition-all duration-500 text-white hover:text-yellow-400"
+                className="px-8 py-3 bg-transparent border border-white/30 rounded-full hover:bg-white/20 hover:scale-105 hover:shadow-lg transition-all duration-500 text-white hover:text-white cursor-pointer"
               >
                 Voltar ao Início
               </Link>

@@ -31,37 +31,19 @@ export default function PublicacoesPage() {
   const publications = [
     {
       id: 1,
-      title: "Estudo sobre Biodiversidade da Mata Atlântica",
+      title:
+        "Criador de Peixe, Criador de Gente: a pesca, a vida e a natureza do Estuário do Rio da Madre",
       description:
-        "Análise detalhada da fauna e flora no Parque Estadual da Serra do Tabuleiro.",
-      date: "2023-10-01",
+        "Obra viabilizada através do Edital Elizabete Anderle, foi publicada no ano de 2019, recebendo a premiação de 1o lugar na categoria arte popular. O livro foi desenvolvido a partir da pesquisa etnográfica realizada por membros do Instituto Tabuleiro, contendo história oral e registros fotográficos das comunidades pesqueiras do estuário do Rio da Madre. Essa é uma linha de atuação da entidade que busca a valorização da sociobiodiversidade e conservação dos atributos naturais dos territórios tradicionais que abrangem o Parque Estadual da Serra do Tabuleiro. A distribuição de mil exemplares do livro ocorreu de forma gratuita nas comunidades pesqueiras do Estuário do Rio da Madre e nas escolas. Duração: 2017/2019. Financiador: Prêmio Elizabete Anderle – 2017.",
+      date: "2019-01-01",
       link: "/publicacoes/1",
-      image: "/images/publicacao1.jpg",
-    },
-    {
-      id: 2,
-      title: "Relatório de Conservação Sustentável",
-      description:
-        "Estratégias para o uso público sustentável da área protegida.",
-      date: "2023-08-15",
-      link: "/publicacoes/2",
-      image: "/images/publicacao2.jpg",
-    },
-    {
-      id: 3,
-      title: "Educação Ambiental em Comunidades Locais",
-      description:
-        "Impacto dos programas de mobilização comunitária na preservação.",
-      date: "2023-06-20",
-      link: "/publicacoes/3",
-      image: "/images/publicacao3.jpg",
+      image: "/capa.jpg",
     },
   ];
 
   return (
     <div>
       <div className="space-y-8">
-        {/* Hero Section with Glassmorphism */}
         <div
           className="
           w-full max-w-7xl mx-auto flex flex-col p-6 sm:p-8 md:p-10 min-h-[20vh]
@@ -70,7 +52,6 @@ export default function PublicacoesPage() {
           rounded-2xl shadow-lg
           hover:bg-black/30 hover:shadow-2xl hover:scale-[1.02] transition-all duration-500"
         >
-          {/* 1. Cabeçalho */}
           <Header />
 
           <div className="flex-grow flex flex-col items-center justify-center text-center">
@@ -84,7 +65,6 @@ export default function PublicacoesPage() {
           </div>
         </div>
 
-        {/* Cards Section with Glassmorphism */}
         <div
           ref={cardsRef}
           className="

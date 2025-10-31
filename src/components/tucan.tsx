@@ -1,52 +1,93 @@
-'use client'
+"use client";
 
-import { Canvas, useFrame } from '@react-three/fiber'
-import { useGLTF, Html } from '@react-three/drei'
-import { useRef, useState, useEffect } from 'react'
-import * as THREE from 'three'
+import { Canvas, useFrame, useThree } from "@react-three/fiber";
+import { useGLTF, Html, useEnvironment } from "@react-three/drei";
+import { useRef, useState, useEffect } from "react";
+import * as THREE from "three";
 
 function TucanModel() {
-  const { scene } = useGLTF('/toucan+3d+model.glb', false) // Disable suspense to handle loading manually
-  const meshRef = useRef<THREE.Group>(null)
-  const [mousePos, setMousePos] = useState({ x: 0, y: 0 })
+  const { scene } = useGLTF("/toucan-optimized.glb");
+  const groupRef = useRef<THREE.Group>(null);
+  const meshRef = useRef<THREE.Group>(null);
+  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+  const { camera } = useThree();
+
+  useEnvironment({ preset: "sunset" });
 
   useEffect(() => {
     const handleMouseMove = (event: MouseEvent) => {
       setMousePos({
         x: (event.clientX / window.innerWidth) * 2 - 1,
         y: -(event.clientY / window.innerHeight) * 2 + 1,
-      })
-    }
-    window.addEventListener('mousemove', handleMouseMove)
-    return () => window.removeEventListener('mousemove', handleMouseMove)
-  }, [])
+      });
+    };
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => window.removeEventListener("mousemove", handleMouseMove);
+  }, []);
 
-  useFrame(() => {
-    if (meshRef.current) {
-      // Adjusted rotation to make the nozzle (beak) follow the mouse more responsively
-      meshRef.current.rotation.y = mousePos.x * Math.PI
-      meshRef.current.rotation.x = -mousePos.y * Math.PI/3
+  useFrame((state, delta) => {
+    if (groupRef.current) {
+      const vector = new THREE.Vector3(mousePos.x, mousePos.y, 0.5);
+      vector.unproject(camera);
+      const dir = vector.sub(camera.position).normalize();
+      const distance = -camera.position.z / dir.z;
+      const pos = camera.position.clone().add(dir.multiplyScalar(distance));
+
+      const direction = pos.sub(new THREE.Vector3(0, 0, 0)).normalize();
+      const targetQuaternion = new THREE.Quaternion().setFromUnitVectors(
+        new THREE.Vector3(0, 0, -1),
+        direction
+      );
+
+      groupRef.current.quaternion.slerp(targetQuaternion, delta * 3);
+
+      if (Math.abs(mousePos.x) < 0.01 && Math.abs(mousePos.y) < 0.01) {
+        groupRef.current.rotation.y +=
+          Math.sin(state.clock.elapsedTime * 0.5) * 0.05;
+        groupRef.current.rotation.x +=
+          Math.cos(state.clock.elapsedTime * 0.3) * 0.02;
+      }
     }
-  })
+  });
 
   if (!scene) {
-    return <Html center><div className="text-white">Loading 3D Model...</div></Html>
+    return (
+      <Html center>
+        <div className="text-white">Loading 3D Model...</div>
+      </Html>
+    );
   }
 
-  // Adjusted scale to fit the toucan within the div
-  return <primitive ref={meshRef} object={scene} scale={[4, 4, 4]} />
+  return (
+    <group ref={groupRef}>
+      <primitive
+        ref={meshRef}
+        object={scene}
+        scale={[4.5, 4.5, 4.5]}
+        position={[0, 0, 0]}
+        rotation={[0, Math.PI, 0]}
+      />
+    </group>
+  );
 }
 
 export default function Tucan() {
   return (
-    <div style={{ height: '400px', width: '400px' }}>
-      <Canvas camera={{ position: [0, 0, 5] }} style={{ height: '100%', width: '100%' }}>
-        {/* Increased light intensities to make it brighter */}
-        <ambientLight intensity={8} />
-        <directionalLight position={[10, 10, 10]} intensity={4} />
-        <pointLight position={[10, 10, 10]} intensity={4} />
+    <div style={{ height: "400px", width: "400px" }}>
+      <Canvas
+        camera={{ position: [0, 0, -5] }}
+        style={{ height: "100%", width: "100%" }}
+        shadows={false}
+      >
+        <ambientLight intensity={0.5} />
+        <hemisphereLight args={["#ffffff", "#404040", 1]} />
+        <directionalLight position={[10, 10, 10]} intensity={8.5} />
+        <pointLight position={[0, 0, 5]} intensity={8.5} />
+        <pointLight position={[-10, 10, 10]} intensity={8.5} />
+        <pointLight position={[10, -10, 10]} intensity={8.5} />
+        <pointLight position={[0, 0, -5]} intensity={88.5} />
         <TucanModel />
       </Canvas>
     </div>
-  )
+  );
 }
