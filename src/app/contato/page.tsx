@@ -31,56 +31,38 @@ export default function ContatoPage() {
   const contacts = [
     {
       id: 1,
-      name: "João Silva",
-      role: "Diretor de Conservação",
-      email: "joao.silva@parque.com",
-      phone: "(48) 99999-9999",
-      image: "/images/contact1.jpg",
-    },
-    {
-      id: 2,
-      name: "Maria Oliveira",
-      role: "Coordenadora de Educação Ambiental",
-      email: "maria.oliveira@parque.com",
-      phone: "(48) 88888-8888",
-      image: "/images/contact2.jpg",
-    },
-    {
-      id: 3,
-      name: "Carlos Santos",
-      role: "Pesquisador Sênior",
-      email: "carlos.santos@parque.com",
-      phone: "(48) 77777-7777",
-      image: "/images/contact3.jpg",
+      name: "Instituto Tabuleiro",
+      role: "Contato Geral",
+      email: "institutotabuleiro@gmail.com",
+      phone: "",
+      image: "/logo.jpg",
     },
   ];
 
   return (
     <div>
       <div className="space-y-8">
-        {/* Hero Section with Glassmorphism */}
-<div
-  className="
-  w-full max-w-7xl mx-auto flex flex-col p-6 sm:p-8 md:p-10 min-h-[20vh]
-  bg-black/25 backdrop-blur-md 
-  border border-white/20 
-  rounded-2xl shadow-lg
-  hover:bg-black/30 hover:shadow-2xl hover:scale-[1.02] transition-all duration-500"
->
-          {/* 1. Cabeçalho */}
+        <div
+          className="
+          w-full max-w-7xl mx-auto flex flex-col p-6 sm:p-8 md:p-10 min-h-[20vh]
+          bg-black/25 backdrop-blur-md 
+          border border-white/20 
+          rounded-2xl shadow-lg
+          hover:bg-black/30 hover:shadow-2xl hover:scale-[1.02] transition-all duration-500"
+        >
           <Header />
 
           <div className="flex-grow flex flex-col items-center justify-center text-center">
-            <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-white leading-tight hover:text-yellow-400 transition-colors duration-500 ease-in-out">
+            <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-white leading-tight hover:text-white hover:scale-105 transition-all duration-500 cursor-pointer">
               Contatos
             </h1>
             <p className="mt-4 max-w-xl text-white/80 hover:text-white/90 transition-colors duration-500 ease-in-out">
-              Entre em contato com nossa equipe para dúvidas, parcerias ou visitas ao Parque Estadual da Serra do Tabuleiro.
+              Entre em contato com nossa equipe para dúvidas, parcerias ou
+              visitas ao Parque Estadual da Serra do Tabuleiro.
             </p>
           </div>
         </div>
 
-        {/* Cards Section with Glassmorphism */}
         <div
           ref={cardsRef}
           className="

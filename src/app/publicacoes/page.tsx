@@ -31,37 +31,125 @@ export default function PublicacoesPage() {
   const publications = [
     {
       id: 1,
-      title: "Estudo sobre Biodiversidade da Mata Atlântica",
+      title:
+        "Criador de Peixe, Criador de Gente: a pesca, a vida e a natureza do Estuário do Rio da Madre",
       description:
-        "Análise detalhada da fauna e flora no Parque Estadual da Serra do Tabuleiro.",
-      date: "2023-10-01",
+        "Obra viabilizada através do Edital Elizabete Anderle, foi publicada no ano de 2019, recebendo a premiação de 1° lugar na categoria arte popular. O livro foi desenvolvido a partir da pesquisa etnográfica realizada por membros do Instituto Tabuleiro, contendo história oral e registros fotográficos das comunidades pesqueiras do estuário do Rio da Madre. Essa é uma linha de atuação da entidade que busca a valorização da sociobiodiversidade e conservação dos atributos naturais dos territórios tradicionais que abrangem o Parque Estadual da Serra do Tabuleiro. A distribuição de mil exemplares do livro ocorreu de forma gratuita nas comunidades pesqueiras do Estuário do Rio da Madre e nas escolas. Duração: 2017/2019. Financiador: Prêmio Elizabete Anderle – 2017.",
+      date: "2019-01-01",
       link: "/publicacoes/1",
-      image: "/images/publicacao1.jpg",
+      image: "/fotosPublicacoes/pescador.png",
+      type: "PUBLICAÇÃO DE LIVRO",
+      resume:
+        "Livro premiado sobre a pesca e a vida no Estuário do Rio da Madre, desenvolvido a partir de pesquisa etnográfica.",
     },
     {
       id: 2,
-      title: "Relatório de Conservação Sustentável",
+      title: "Felinos do Tabuleiro",
       description:
-        "Estratégias para o uso público sustentável da área protegida.",
-      date: "2023-08-15",
+        "O programa de pesquisa Felinos do Tabuleiro tem como objetivo realizar estudos científicos acerca das espécies de felinos silvestres ocorrentes no Parque Estadual da Serra do Tabuleiro. Além disso, procura gerar subsídios técnicos para a conservação das espécies em escala local, nacional e internacional. As ações do programa são contínuas e frequentemente direcionadas para pesquisa no campo da ecologia e conservação destes mamíferos carnívoros. Duração: 2018 até o momento. Financiador: apoio Tigrinus Equipamentos para Pesquisa.",
+      date: "2018-01-01",
       link: "/publicacoes/2",
-      image: "/images/publicacao2.jpg",
+      image: "/fotosPublicacoes/jaguatirica.png",
+      type: "PROGRAMA DE PESQUISA",
+      resume:
+        "Programa de pesquisa sobre felinos silvestres no Parque Estadual da Serra do Tabuleiro, focado em ecologia e conservação.",
     },
     {
       id: 3,
-      title: "Educação Ambiental em Comunidades Locais",
+      title:
+        "Plano de Ação Estadual (PAE) para a conservação do Preá-de-Moleques-do-Sul",
       description:
-        "Impacto dos programas de mobilização comunitária na preservação.",
-      date: "2023-06-20",
+        "O preá-de-Moleques-do-Sul (Cavia intermedia) é um pequeno e raro mamífero cujo habitat está restrito a apenas uma ilha de cerca de 10 hectares localizada no arquipélago de Moleques do Sul, zona intangível do Parque Estadual da Serra do Tabuleiro. A espécie figura entre os 20 pequenos mamíferos mais ameaçados do mundo e foi considerada Criticamente Ameaçada de Extinção em todos os níveis: global, nacional e estadual. Pensando nisso, o Instituto Tabuleiro, em parceria com o Instituto do Meio Ambiente do Estado de Santa Catarina (IMA), realizou a elaboração do Plano de Ação Estadual (PAE) para a conservação do Preá-de-Moleques-do-Sul. Duração: 2018/2019. Financiador: Fundação Boticário.",
+      date: "2019-01-01",
       link: "/publicacoes/3",
-      image: "/images/publicacao3.jpg",
+      image: "/fotosPublicacoes/proprea.png",
+      type: "PLANO DE AÇÃO",
+      resume:
+        "Plano de ação para a conservação do preá-de-Moleques-do-Sul, espécie criticamente ameaçada de extinção.",
+    },
+    {
+      id: 4,
+      title:
+        "Monitoramento da flora da restinga da Baixada do Massiambu inserida no Parque Estadual da Serra do Tabuleiro: avaliação histórica e correlação das condições natural e pós-distúrbios antrópicos",
+      description:
+        "O projeto tem por objetivo realizar diagnóstico da vegetação de restinga na Baixada do Massiambu através de amostragens fitossociológicas comparativas (entre as áreas onde houve incidência de queimadas recentes e as que não foram impactadas pelo fogo nos últimos 17 anos), como parâmetro para avaliar a integridade destes ambientes e inferir acerca dos efeitos de agentes de degradação dessa área do Parque Estadual da Serra do Tabuleiro. Deseja-se verificar se existem espécies-chave frente aos impactos antrópicos, as favorecidas e as não favorecidas no processo de regeneração natural. Duração: 2021 até o momento. Financiador: Transferência de valores de multa pecuniária por crime contra o meio ambiente em processo julgado pelo Ministério Público Federal / Procuradoria da República em Santa Catarina.",
+      date: "2021-01-01",
+      link: "/publicacoes/4",
+      image: "/fotosPublicacoes/pesquisacampo.png",
+      type: "PROJETO DE PESQUISA",
+      resume:
+        "Projeto de monitoramento da flora da restinga na Baixada do Massiambu, avaliando impactos de queimadas e regeneração natural.",
+    },
+    {
+      id: 5,
+      title:
+        "Avaliação de procedimentos de monitoramento populacional não invasivo do Preá-de-Moleques (Cavia intermedia) endêmico da ilha de Moleques do Sul, Parque Estadual da Serra do Tabuleiro",
+      description:
+        "A única população conhecida de Cavia intermedia tem menos que 50 indivíduos adultos restrita em uma ilha de 10 ha, onde há outras endêmicas e um dos principais ninhais de aves marinhas do Atlântico Sul. O preá-de-moleques-do-sul, criticamente ameaçado de extinção em todos os níveis (global, nacional e estadual), está entre os 20 pequenos mamíferos mais ameaçados no mundo e entre as 100 espécies EDGE, mas a espécie ainda não possui um programa de monitoramento. O Plano de Ação de Conservação desta espécie foi elaborado em 2018-2019 pelo órgão responsável pela ilha (IMA) e o Instituto Tabuleiro. Entre as 28 ações deste Plano, uma busca contar e monitorar a espécie. Além disso, o monitoramento desta espécie demanda métodos quanto menos invasivos possíveis como, por exemplo, armadilha fotográfica. O objetivo deste novo projeto do IT é testar método não invasivo de monitoramento da população no seu ambiente através de armadilha fotográfica. Espera-se obter imagens suficientes para o banco de imagem da espécie e para estimativas populacionais por método não invasivo, assim como contribuir para pelo menos cinco ações do Plano de Ação do preá-de-moleques-do-sul. Duração: 2021/2022. Financiador: Global Wildlife Conservation/ Greensboro Science Center e IUCN.",
+      date: "2021-01-01",
+      link: "/publicacoes/5",
+      image: "/fotosPublicacoes/pesquisacampo2.png",
+      type: "PROJETO DE PESQUISA",
+      resume:
+        "Projeto de avaliação de métodos não invasivos para monitoramento populacional do preá-de-moleques-do-sul.",
+    },
+    {
+      id: 6,
+      title:
+        "Conservação ex-situ de Commelina catharinensis Hassemer et al. (Commelinaceae)",
+      description:
+        "Commelina catharinensis é uma pequena erva rara, de ocorrência muito restrita ao litoral de Santa Catarina. Atualmente as únicas populações conhecidas estão localizadas na Baixada do Massiambú (Palhoça, SC). O projeto, sob coordenação do IT e IMA, foi firmado através de Acordo de Cooperação Técnica entre as partes, tendo início em abril de 2021. Visa a conservação de C. catharinensis e, tem como objetivo reduzir os riscos de extinção da espécie. Monitora indivíduos de ocorrência natural na Baixada do Massiambú e realiza introdução de nova população, visando ampliar a ocorrência desta para áreas menos vulneráveis dentro do PAEST. Das populações da Baixada, foram selecionados indivíduos matrizes para produção de mudas através de estacas. Em viveiro, foram produzidos 3 indivíduos, de onde, a partir de sementes destes, já foram produzidas e introduzidas mais de 100 mudas de C. catharinensis. As mudas foram plantadas em cordões arenosos situados nas proximidades do Centro de Visitantes do PAEST em três fases de plantio: em junho de 2022, março e novembro de 2023 e, em novembro de 2024. Como desdobramento do projeto foi criado um Programa de Manejo específico para conservação de C. catharinensis, onde, além das atividades já em andamento, prevê: - Realização de novos plantios de introdução; - Realização de expedições para encontrar a espécie em outras regiões do Estado e; - Buscar a avaliação do status de ameaça da espécie, fornecer subsídios e informar os órgãos responsáveis, visando a inclusão em listas de espécies da flora ameaçada. Duração: 2021 até o momento Financiador: sem financiador. Apoio: Viveiro Camarinha, C-Pack - Creative Packaging, Sociedade de Pesquisa em Vida Selvagem e Educação Ambiental (SPVS), Arteris Litoral Sul e Instituto Çarakura.",
+      date: "2021-01-01",
+      link: "/publicacoes/6",
+      image: "/fotosPublicacoes/pesquisacampo.png",
+      type: "PROJETO DE PESQUISA",
+      resume:
+        "Projeto de conservação ex-situ de Commelina catharinensis, espécie rara do litoral de Santa Catarina.",
+    },
+    {
+      id: 7,
+      title:
+        "Programa de Educação Ambientalpara Conservação da espécie endêmica Cavia intermedia, o Preá do Arquipélago de Moleques do Sul - Santa Catarina - Brasil",
+      description:
+        "O Preá-de-Moleques (Cavia intermedia) é endêmico da Ilha de Moleques-do-Sul, zona intangível do Parque Estadual da Serra do Tabuleiro (SC). Criticamente ameaçado em todos os níveis (global, nacional e estadual), é considerado um dos vinte pequenos mamíferos mais raros do planeta. As principais ameaças à conservação são o desembarque na ilha e ausência de informações, por parte do público em geral, sobre sua vulnerabilidade. O Programa de Educação Ambiental para a Conservação do Preá-de-Moleques ocorreu entre os anos de 2022/2024 em três comunidades costeiras do Estado, executado pelo Instituto do Tabuleiro e IMA-SC e financiado pela Karoon Energy. O Programa de Educação Ambiental para a Conservação do Preá-de-Moleques é composto por quatro projetos integrados: curso online para docentes; atividades educativas nas escolas; publicação de livro e educomunicação socioambiental, envolvendo diretamente três escolas das comunidades pesqueiras do sul de Florianópolis (Pântano do Sul) e do município de Palhoça (Pinheira e Guarda do Embaú), além dos pescadores e usuários de náuticas localizadas nestes municípios. O recorte espacial se deu pela proximidade com o Arquipélago de Moleques do Sul. O trabalho compõe a ação 4.1 do Plano de Ação Estadual para a Conservação do Preá-de Moleques-do-Sul (Cavia intermedia), elaborado pelo Instituto Tabuleiro em parceria com o Instituto do Meio Ambiente de Santa Catarina (IMA). O objetivo foi promover a divulgação científica e o engajamento social na conservação da espécie na Grande Florianópolis/SC. Além de atividades educativas nas escolas, foram elaborados e distribuídos materiais didáticos, realizados eventos socioambientais e reuniões com os pescadores para o intercâmbio de conhecimentos construídos com as comunidades escolares. Duração: 2022 até o momento Financiador: Karoon Petróleo e Gás Ltda.",
+      date: "2022-01-01",
+      link: "/publicacoes/7",
+      image: "/fotosPublicacoes/pesquisacampo.png",
+      type: "PROGRAMA DE EDUCAÇÃO AMBIENTAL",
+      resume:
+        "Programa de educação ambiental para a conservação do Preá-de-Moleques em comunidades costeiras.",
+    },
+    {
+      id: 8,
+      title:
+        "Recuperação de área degradada em trecho de Mata Ciliar do Rio Maciambu na Terra Indígena Maciambu",
+      description:
+        "O projeto busca realizar a recuperação de uma área degradada em trecho de Mata Ciliar do Rio Maciambu, no interior da Terra Indígena (TI) Maciambu (Aldeia Pira Rupá), da etnia M’Bya Guarani, localizado ao sul do município de Palhoça, na região da Grande Florianópolis (SC). A área está inserida no bioma Mata Atlântica, limítrofe ao Parque Estadual da Serra do Tabuleiro (PAEST), a maior unidade de conservação de proteção integral do estado de Santa Catarina. As atividades do projeto estão ancoradas na troca de saberes entre indígenas moradores da TI e pesquisadoras do Instituto Tabuleiro, incluindo ações de reconhecimento e mapeamento do uso do território indígena, identificação etnobotânica de árvores nativas, monitoramento e marcação de matrizes para coleta de sementes, oficinas de viveiragem e mutirões de plantio de mudas nativas. A área a ser inicialmente recuperada é de aproximadamente 2.500 m2, onde serão plantadas 1000 mudas. Além do plantio de espécies da Mata Atlântica na mata ciliar, o projeto atua com espécies de valor cultural a partir da identificação etnobotânica de plantas que possuam usos medicinais, alimentícios e espirituais para a comunidade da Aldeia. Duração: 2025 até o momento Financiadores: Fundo Casa Socioambiental.",
+      date: "2025-01-01",
+      link: "/publicacoes/8",
+      image: "/fotosPublicacoes/pesquisacampo.png",
+      type: "PROJETO",
+      resume:
+        "Projeto de recuperação de mata ciliar na Terra Indígena Maciambu, com troca de saberes entre indígenas e pesquisadores.",
+    },
+    {
+      id: 9,
+      title:
+        "TABULEIRO: Registros da biodiversidade de um dos maiores patrimônios naturais de Santa Catarina",
+      description:
+        "Este livro não é o resultado de um trabalho programado, mas do envolvimento do autor com as coisas naturais e com uma quantidade imensa de pessoas. Muitas dessas pessoas foram guiadas, auxiliadas, informadas e orientadas, ao longo de mais de 30 anos, por Fernando Maciel Brüggemann e, com ele, geraram informações científicas da maior relevância, às quais, em geral, o público leigo não tem acesso. Com o objetivo de promover a divulgação do que existe de mais belo na Serra do Tabuleiro e em suas cercanias, o autor nos convida para conhecer sua casa e, como nosso anfitrião, recebe-nos para uma confraternização, abrindo janelas e portas de mirantes, de onde observamos os mais lindos lugares que se pode encontrar naquela região, ao mesmo tempo em que, repetindo uma rotina de dar inveja a muitos naturalistas, leva-nos a passear por caminhos fantásticos, presenteando-nos com imagens e informações de seres vivos maravilhosos de nossa fauna e flora, assim como tem feito ao longo desses anos com turistas, alunos, pesquisadores e outros tantos admiradores da natureza. Esta obra não é apenas uma pequena parte do resultado do envolvimento deste biólogo com a natureza. É muito mais a demonstração de toda a paixão deste grande naturalista pelo que faz e pelo lugar onde vive.",
+      date: "2025-01-01",
+      link: "/publicacoes/9",
+      image: "/fotosPublicacoes/pesquisacampo.png",
+      type: "LANÇAMENTO DE LIVRO",
+      resume:
+        "Livro sobre a biodiversidade da Serra do Tabuleiro, com registros de fauna e flora.",
     },
   ];
 
   return (
     <div>
       <div className="space-y-8">
-        {/* Hero Section with Glassmorphism */}
         <div
           className="
           w-full max-w-7xl mx-auto flex flex-col p-6 sm:p-8 md:p-10 min-h-[20vh]
@@ -70,11 +158,10 @@ export default function PublicacoesPage() {
           rounded-2xl shadow-lg
           hover:bg-black/30 hover:shadow-2xl hover:scale-[1.02] transition-all duration-500"
         >
-          {/* 1. Cabeçalho */}
           <Header />
 
           <div className="flex-grow flex flex-col items-center justify-center text-center">
-            <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-white leading-tight hover:text-yellow-400 transition-colors duration-500 ease-in-out">
+            <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-white leading-tight hover:scale-105 transition-all duration-500 ease-in-out">
               Publicações
             </h1>
             <p className="mt-4 max-w-xl text-white/80 hover:text-white/90 transition-colors duration-500 ease-in-out">
@@ -84,7 +171,6 @@ export default function PublicacoesPage() {
           </div>
         </div>
 
-        {/* Cards Section with Glassmorphism */}
         <div
           ref={cardsRef}
           className="

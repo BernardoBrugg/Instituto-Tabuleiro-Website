@@ -1,33 +1,48 @@
 "use client";
 
-import Image from 'next/image';
-import { useState } from 'react';
+import Image from "next/image";
+import { useState } from "react";
 
 export default function Header() {
   const navLinks = [
-    { name: 'Home', href: '/' },
-    { name: 'Sobre', href: '/sobre' },
-    { name: 'Publicações', href: '/publicacoes' },
-    { name: 'Localização', href: '/local' },
+    { name: "Home", href: "/" },
+    { name: "Sobre", href: "/sobre" },
+    { name: "Publicações", href: "/publicacoes" },
+    { name: "Localização", href: "/local" },
   ];
 
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="flex items-center justify-between w-full">
+    <header className="flex items-center justify-between w-full mb-4">
       <div className="flex items-center hover:scale-105 transition-all duration-500 ease-in-out cursor-pointer">
-        <Image src="/logo.jpg" alt="Instituto Tabuleiro Logo" width={50} height={50} className="mr-4 rounded-full hover:scale-110 transition-all duration-500 ease-in-out" />
-        <h1 className="text-xl font-bold tracking-wider hover:text-yellow-500 transition-colors duration-500 ease-in-out">Instituto Tabuleiro</h1>
+        <Image
+          src="/logo.jpg"
+          alt="Instituto Tabuleiro Logo"
+          width={50}
+          height={50}
+          className="mr-4 rounded-full hover:scale-105 transition-all duration-500 ease-in-out"
+        />
+        <h1 className="text-xl font-bold tracking-wider hover:text-white hover:scale-105 transition-all duration-500 cursor-pointer">
+          Instituto Tabuleiro
+        </h1>
       </div>
       <nav className="hidden md:flex items-center gap-6">
         {navLinks.map((link) => (
-          <a key={link.name} href={link.href} className="text-sm hover:text-yellow-500 hover:scale-110 transition-all duration-500 ease-in-out cursor-pointer">
+          <a
+            key={link.name}
+            href={link.href}
+            className="text-sm hover:text-white hover:scale-105 transition-all duration-500 ease-in-out cursor-pointer"
+          >
             {link.name}
           </a>
         ))}
       </nav>
       <div className="md:hidden relative">
-        <button onClick={() => setIsOpen(!isOpen)} className="flex flex-col items-center justify-center w-8 h-8">
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          className="flex flex-col items-center justify-center w-8 h-8"
+        >
           <span className="block w-6 h-0.5 bg-white mb-1 transition-all duration-300"></span>
           <span className="block w-6 h-0.5 bg-white mb-1 transition-all duration-300"></span>
           <span className="block w-6 h-0.5 bg-white transition-all duration-300"></span>
@@ -35,19 +50,45 @@ export default function Header() {
         {isOpen && (
           <div className="absolute top-full left-0 mt-2 bg-white border border-gray-300 rounded-lg p-4 flex flex-col gap-4 z-50">
             {navLinks.map((link) => (
-              <a key={link.name} href={link.href} className="text-sm text-black hover:text-yellow-500 transition-colors duration-300" onClick={() => setIsOpen(false)}>
+              <a
+                key={link.name}
+                href={link.href}
+                className="text-sm text-black hover:text-white hover:scale-105 transition-all duration-500 cursor-pointer"
+                onClick={() => setIsOpen(false)}
+              >
                 {link.name}
               </a>
             ))}
           </div>
         )}
       </div>
-      <a 
-        href="contato" 
-        className="px-5 py-2 text-sm border border-white/50 rounded-full hover:bg-white/20 hover:scale-105 hover:shadow-lg hover:text-yellow-500 transition-all duration-500 ease-in-out cursor-pointer"
-      >
-        Contato
-      </a>
+      <div className="flex items-center gap-4">
+        <a
+          href="https://www.instagram.com/institutotabuleiro/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hover:scale-105 transition-all duration-500 ease-in-out cursor-pointer"
+        >
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+              fill="white"
+            />
+          </svg>
+        </a>
+        <a
+          href="contato"
+          className="px-5 py-2 text-sm border border-white/50 rounded-full hover:bg-white/20 hover:scale-105 hover:shadow-lg hover:text-white transition-all duration-500 ease-in-out cursor-pointer"
+        >
+          Contato
+        </a>
+      </div>
     </header>
   );
 }

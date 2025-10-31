@@ -17,8 +17,8 @@ export default function HomePage() {
       setIsMobile(window.innerWidth < 768);
     };
     checkMobile();
-    window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
   useEffect(() => {
@@ -34,7 +34,6 @@ export default function HomePage() {
       },
       { threshold: 0.1 }
     );
-    
 
     if (sobreRef.current) observer.observe(sobreRef.current);
     if (publicacoesRef.current) observer.observe(publicacoesRef.current);
@@ -58,19 +57,19 @@ export default function HomePage() {
           <section className="flex-grow flex items-center w-full">
             <div className="flex flex-col md:flex-row items-center gap-8 md:gap-16">
               <div className="hidden md:flex flex-col gap-4 text-sm text-white/70">
-                <span className="hover:text-white hover:scale-110 transition-all duration-500 cursor-pointer">
+                <span className="hover:text-white hover:scale-105 transition-all duration-500 cursor-pointer">
                   Pesquisa
                 </span>
-                <span className="hover:text-white hover:scale-110 transition-all duration-500 cursor-pointer">
+                <span className="hover:text-white hover:scale-105 transition-all duration-500 cursor-pointer">
                   Conservação
                 </span>
-                <span className="hover:text-white hover:scale-110 transition-all duration-500 cursor-pointer">
+                <span className="hover:text-white hover:scale-105 transition-all duration-500 cursor-pointer">
                   Comunidade
                 </span>
               </div>
 
               <div className="text-center md:text-left">
-                <h2 className="text-5xl md:text-7xl font-bold tracking-tight text-white leading-tight hover:text-yellow-200 transition-colors duration-500">
+                <h2 className="text-5xl md:text-7xl font-bold tracking-tight text-white leading-tight hover:text-white hover:scale-105 transition-all duration-500 cursor-pointer">
                   Preservando o Coração de Santa Catarina
                 </h2>
                 <p className="mt-4 max-w-xl text-white/80 hover:text-white/90 transition-colors duration-500">
@@ -78,9 +77,12 @@ export default function HomePage() {
                   incrível diversidade que o Parque Estadual da Serra do
                   Tabuleiro abriga. Explore o trabalho da nossa organização.
                 </p>
-                <button 
+                <button
                   className="mt-8 px-8 py-3 bg-white/10 border border-white/30 rounded-full hover:bg-white/20 hover:scale-105 hover:shadow-lg transition-all duration-500 cursor-pointer"
-                  onClick={() => sobreRef.current && scrollIntoView(sobreRef.current, { behavior: 'smooth' })}
+                  onClick={() =>
+                    sobreRef.current &&
+                    scrollIntoView(sobreRef.current, { behavior: "smooth" })
+                  }
                 >
                   Saiba Mais
                 </button>
@@ -105,19 +107,25 @@ export default function HomePage() {
           opacity-0 transition-opacity duration-500
            hover:bg-black/30 hover:shadow-2xl hover:scale-[1.02] transition-all duration-500"
         >
-          <h2 className="text-center text-3xl font-bold text-white mb-6 hover:text-yellow-200 transition-colors duration-500">
+          <h2 className="text-center text-3xl font-bold text-white mb-6 hover:text-white hover:scale-105 transition-all duration-500 cursor-pointer">
             Sobre o Instituto
           </h2>
           <p className="text-center text-white/80 mb-8 hover:text-white/90 transition-colors duration-500">
-            O Instituto Tabuleiro é uma organização não governamental dedicada à
-            preservação e conservação do Parque Estadual da Serra do Tabuleiro,
-            desenvolvendo atividades de pesquisa científica, uso público
-            sustentável, educação ambiental e mobilização comunitária.
+            A Associação para a Conservação do Parque Estadual da Serra do
+            Tabuleiro - Instituto Tabuleiro - foi constituída em 1 de novembro
+            de 2015, reunindo profissionais de diversas áreas de conhecimento
+            que atuam há mais de 20 anos nas áreas de pesquisa científica, uso
+            público, educação ambiental e mobilização comunitária no território
+            abrangido pelo Parque Estadual da Serra do Tabuleiro e entorno.
+            Nosso objetivo de criação foi reunir em uma mesma Instituição um
+            coletivo de profissionais experientes e com vasta atuação dentro de
+            um território específico. Nossa missão é auxiliar a gestão do Parque
+            e promover a conservação de seus ecossistemas naturais.
           </p>
           <div className="text-center">
             <Link
               href="/sobre"
-              className="px-8 py-3 bg-white/10 border border-white/30 rounded-full hover:bg-white/20 hover:scale-105 hover:shadow-lg transition-all duration-500 text-white hover:text-yellow-200"
+              className="px-8 py-3 bg-white/10 border border-white/30 rounded-full hover:bg-white/20 hover:scale-105 hover:shadow-lg transition-all duration-500 text-white hover:text-white cursor-pointer"
             >
               Saiba Mais Sobre Nós
             </Link>
@@ -134,7 +142,7 @@ export default function HomePage() {
           opacity-0 transition-opacity duration-500
            hover:bg-black/30 hover:shadow-2xl hover:scale-[1.02] transition-all duration-500"
         >
-          <h2 className="text-center text-3xl font-bold text-white mb-6 hover:text-yellow-200 transition-colors duration-500">
+          <h2 className="text-center text-3xl font-bold text-white mb-6 hover:text-white hover:scale-105 transition-all duration-500 cursor-pointer">
             Publicações
           </h2>
           <p className="text-center text-white/80 mb-8 hover:text-white/90 transition-colors duration-500">
@@ -144,7 +152,7 @@ export default function HomePage() {
           <div className="text-center">
             <Link
               href="/publicacoes"
-              className="px-8 py-3 bg-white/10 border border-white/30 rounded-full hover:bg-white/20 hover:scale-105 hover:shadow-lg transition-all duration-500 text-white hover:text-yellow-200"
+              className="px-8 py-3 bg-white/10 border border-white/30 rounded-full hover:bg-white/20 hover:scale-105 hover:shadow-lg transition-all duration-500 text-white hover:text-white cursor-pointer"
             >
               Ver Publicações
             </Link>
@@ -161,7 +169,7 @@ export default function HomePage() {
           opacity-0 transition-opacity duration-500
            hover:bg-black/30 hover:shadow-2xl hover:scale-[1.02] transition-all duration-500"
         >
-          <h2 className="text-center text-3xl font-bold text-white mb-6 hover:text-yellow-200 transition-colors duration-500">
+          <h2 className="text-center text-3xl font-bold text-white mb-6 hover:text-white hover:scale-105 transition-all duration-500 cursor-pointer">
             Localização
           </h2>
           <p className="text-center text-white/80 mb-8 hover:text-white/90 transition-colors duration-500">
@@ -172,7 +180,7 @@ export default function HomePage() {
           <div className="text-center">
             <Link
               href="/local"
-              className="px-8 py-3 bg-white/10 border border-white/30 rounded-full hover:bg-white/20 hover:scale-105 hover:shadow-lg transition-all duration-500 text-white hover:text-yellow-200"
+              className="px-8 py-3 bg-white/10 border border-white/30 rounded-full hover:bg-white/20 hover:scale-105 hover:shadow-lg transition-all duration-500 text-white hover:text-white cursor-pointer"
             >
               Ver Localização
             </Link>
