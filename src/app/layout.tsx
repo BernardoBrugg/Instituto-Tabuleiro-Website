@@ -21,7 +21,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
       <body
         className={`${inter.className} bg-center bg-no-repeat bg-fixed text-white`}
         style={{
-          backgroundImage: "url('/capa.jpg')",
+          backgroundImage: "url('background/capa.jpg')",
           backgroundSize: '100% 100%',
           backgroundRepeat: 'no-repeat',
           backgroundAttachment: 'fixed',

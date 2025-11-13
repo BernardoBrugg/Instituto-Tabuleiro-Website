@@ -3,7 +3,6 @@
 import { useEffect, useRef } from "react";
 import Header from "@/components/header";
 import LocalizationModal from "@/components/localizationModal";
-import { div } from "three/tsl";
 
 export default function LocalPage() {
   const comoChegarRef = useRef(null);
