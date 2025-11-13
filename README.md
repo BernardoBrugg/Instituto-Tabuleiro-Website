@@ -96,13 +96,3 @@ The site is configured for deployment on Vercel or any platform supporting Next.
 3. Make your changes
 4. Run tests and linting
 5. Submit a pull request
-
-## License
-
-This project is licensed under the MIT License.
-
-## Contact
-
-Instituto Tabuleiro
-Website: [Your website URL]
-Email: [Contact email]
