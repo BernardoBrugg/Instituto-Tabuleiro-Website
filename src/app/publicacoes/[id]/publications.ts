@@ -123,4 +123,60 @@ export const publications = [
     resume:
       "Livro sobre a biodiversidade da Serra do Tabuleiro, com registros de fauna e flora.",
   },
+  {
+    id: 10,
+    title:
+      "Oficina de Educação Ambiental: Invasão Biológica por Pinus na Restinga do Parque Estadual da Serra do Tabuleiro (PAEST)",
+    description:
+      "A Oficina foi realizada na área do 'Projeto piloto de restauração ecológica da restinga do PAEST - Parque Estadual da Serra do Tabuleiro', em Palhoça, SC, onde atuam instituições do Grupo Técnico Científico de Apoio à Restauração Ecológica da Restinga da Baixada do Maciambu. A atividade contou com roda de conversa sobre o tema, apresentação das ferramentas, orientações gerais e a prática de retirada de indivíduos de Pinus jovens pelos participantes. Contou com a participação de 23 (vinte e três) pessoas, entre: voluntários das comunidades da Baixada do Maciambu (Palhoça, SC), interessados no tema, membros de instituições parceiras, condutores cadastrados pelo Parque e funcionários do IMA (Instituto de Meio Ambiente de SC). Como resultados significativos da ação tivemos a remoção de 16.000 indivíduos de Pinus jovens, o engajamento comunitário e sensibilização com relação às espécies exóticas invasoras em Unidades de Conservação. Duração: 8/10/2022. Financiador: C-Pack Creative Packaging.",
+    date: "2022-10-08",
+    link: "/publicacoes/10",
+    image:
+      "/4.2.1%20-%20Oficina%20de%20Educa%C3%A7%C3%A3o%20Ambiental_%20Invas%C3%A3o%20Biol%C3%B3gica%20por%20Pinus%20na%20Restinga%20do%20Parque%20Estadual%20da%20Serra%20do%20Tabuleiro%20(PAEST)/Anna%20antes.jpeg",
+    type: "OFICINAS",
+    resume:
+      "Oficina sobre invasão biológica por Pinus na restinga do PAEST, com remoção de 16.000 indivíduos jovens.",
+  },
+  {
+    id: 11,
+    title:
+      "Oficina de Educação Ambiental: Plantas Medicinais da Restinga do Parque Estadual da Serra do Tabuleiro",
+    description:
+      "A oficina de Plantas Medicinais conta com uma sequência de atividades, incluindo Roda de Conversa sobre o uso de plantas para prevenir e tratar doenças, suas formas de usos e preparos; um Roteiro Etnobotânico de identificação e coleta de espécies medicinais nativas da Mata Atlântica que possuem usos consagrados em comunidades tradicionais e são aprovadas pela Agência Nacional de Vigilância Sanitária (Anvisa) e a preparação de um extrato medicinal de erva-baleeira (Varronia curassavica) a partir da maceração da planta em álcool de cereais. Cada participante leva para casa um frasco com o extrato produzido. Também há a preparação e a degustação de chás feitos a partir de infusão de plantas medicinais coletadas na oficina. Duração: Dezembro de 2021.",
+    date: "2021-12-01",
+    link: "/publicacoes/11",
+    image:
+      "/4.2.2%20-%20Oficina%20de%20Educa%C3%A7%C3%A3o%20Ambiental_%20Plantas%20Medicinais%20da%20Restinga%20do%20Parque%20Estadual%20da%20Serra%20do%20Tabuleiro/Oficina%20educa%C3%A7%C3%A3o%20ambiental1.jpg",
+    type: "OFICINAS",
+    resume:
+      "Oficina sobre plantas medicinais da restinga com atividades práticas e preparação de extratos.",
+  },
+  {
+    id: 12,
+    title:
+      "Grupo Técnico Científico de Apoio à Restauração Ecológica da Baixada do Massiambú",
+    description:
+      "O Grupo Técnico Científico de Apoio à Restauração Ecológica da Restinga da Baixada do Massiambú foi criado em 2018 e é composto por instituições públicas, privadas e do terceiro setor que atuam na conservação e restauração ecológica da restinga do Parque Estadual da Serra do Tabuleiro. O grupo desenvolve ações integradas de pesquisa, monitoramento e restauração, incluindo o controle de espécies exóticas invasoras como o Pinus, monitoramento da flora nativa e recuperação de áreas degradadas por incêndios. As atividades são coordenadas de forma participativa, envolvendo pesquisadores, gestores ambientais e comunidades locais.",
+    date: "2018-01-01",
+    link: "/publicacoes/12",
+    image:
+      "/4.1%20Grupo%20T%C3%A9cnico%20Cient%C3%ADfico%20de%20Apoio%20%C3%A0%20Restaura%C3%A7%C3%A3o%20Ecol%C3%B3gica%20da%20Baixada%20do%20Massiamb%C3%BA%20/Incendio%202018%20tlvz%20(1).jpg",
+    type: "GRUPO TÉCNICO",
+    resume:
+      "Grupo interinstitucional para restauração ecológica da restinga do PAEST, com ações de pesquisa e controle de espécies invasoras.",
+  },
+  {
+    id: 13,
+    title:
+      "Conselho Consultivo da Área de Proteção Ambiental da Baleia Franca (CONAPABF-ICMBio)",
+    description:
+      "O Instituto Tabuleiro participa como membro titular do Conselho Consultivo da Área de Proteção Ambiental da Baleia Franca (CONAPABF), unidade de conservação federal gerida pelo Instituto Chico Mendes de Conservação da Biodiversidade (ICMBio). O conselho é um órgão colegiado de caráter consultivo que tem por finalidade contribuir para o cumprimento dos objetivos da unidade de conservação, promovendo a participação social na gestão da APA. O Instituto Tabuleiro contribui com conhecimento técnico-científico sobre a biodiversidade marinha e costeira da região, auxiliando na tomada de decisões sobre conservação e uso sustentável dos recursos naturais.",
+    date: "2020-01-01",
+    link: "/publicacoes/13",
+    image:
+      "/4.1.%20Conselho%20Consultivo%20da%20%C3%81rea%20de%20Prote%C3%A7%C3%A3o%20Ambiental%20da%20Baleia%20Franca%20(CONAPABF-ICMBio)./WhatsApp%20Image%202025-08-04%20at%2014.13.37.jpeg",
+    type: "PARTICIPAÇÃO EM CONSELHO",
+    resume:
+      "Participação do Instituto Tabuleiro no conselho consultivo da APA da Baleia Franca, contribuindo para a gestão participativa da unidade de conservação.",
+  },
 ];

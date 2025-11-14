@@ -1,10 +1,12 @@
 "use client";
 
 import { useParams } from "next/navigation";
+import { useState } from "react";
 import Header from "@/components/header";
 import Image from "next/image";
 import Link from "next/link";
 import { publications } from "./publications";
+import Carousel from "@/app/components/Carousel";
 
 const folderNames: Record<number, string> = {
   1: "3.1. Publicação do Livro “Criador de Peixe, Criador de Gente_ a pesca, a vida e a natureza do Estuário do Rio da Madre”",
@@ -16,6 +18,10 @@ const folderNames: Record<number, string> = {
   7: "3.7.  “Programa de Educação Ambiental para Conservação da espécie endêmica Cavia intermedia, o Preá do Arquipélago de Moleques do Sul - Santa Catarina - Brasil” ",
   8: "3.8. Projeto_ Refloresta Maciambu_ Recuperação de mata ciliar e troca de saberes na Terra Indígena Maciambu (Aldeia Pira Rupá-SC) ",
   9: "Fotos extras",
+  10: "4.2.1 - Oficina de Educação Ambiental_ Invasão Biológica por Pinus na Restinga do Parque Estadual da Serra do Tabuleiro (PAEST)",
+  11: "4.2.2 - Oficina de Educação Ambiental_ Plantas Medicinais da Restinga do Parque Estadual da Serra do Tabuleiro",
+  12: "4.1 Grupo Técnico Científico de Apoio à Restauração Ecológica da Baixada do Massiambú ",
+  13: "4.1. Conselho Consultivo da Área de Proteção Ambiental da Baleia Franca (CONAPABF-ICMBio).",
 };
 
 const imageLists: Record<number, string[]> = {
@@ -110,6 +116,39 @@ const imageLists: Record<number, string[]> = {
     "IMG_0078.JPG",
     "capa.jpg",
   ],
+  10: [
+    "Anna antes.jpeg",
+    "Anna depois.jpeg",
+    "Cards (1).jpeg",
+    "Cards (2).jpeg",
+    "Jaque (7).jpeg",
+    "Ju (2).jpeg",
+    "Ju (3).jpeg",
+    "Rafa (2).JPG",
+    "Raka (18).jpeg",
+    "Raka (4).jpeg",
+  ],
+  11: [
+    "Oficina educação ambiental1.jpg",
+    "Oficina educação ambiental2.jpg",
+    "Oficina educação ambiental3.jpg",
+  ],
+  12: [
+    "Incendio 2018 tlvz (1).jpg",
+    "Monit Raizes 15dez23 (1).JPG",
+    "Pinus banhado Cang set21 (2).jpg",
+    "Pinus cordao nordeste bacupari jul21(6).JPG",
+    "WhatsApp Image 2019-09-21 at 21.09.19.jpeg",
+    "WhatsApp Image 2019-09-21 at 21.10.11.jpeg",
+    "WhatsApp Image 2019-09-21 at 21.10.18(1).jpeg",
+    "corte pinus ago21 Cad_Jhon (7).JPG",
+  ],
+  13: [
+    "WhatsApp Image 2025-08-04 at 14.13.37.jpeg",
+    "WhatsApp Image 2025-08-04 at 14.13.38.jpeg",
+    "WhatsApp Image 2025-08-04 at 14.15.17.jpeg",
+    "WhatsApp Image 2025-08-05 at 17.01.14.jpeg",
+  ],
 };
 
 const imagesMap: Record<number, string[]> = {};
@@ -121,22 +160,11 @@ for (const idStr in imageLists) {
   );
 }
 
-const layoutMap: Record<number, string> = {
-  1: "grid-cols-2",
-  2: "grid-cols-3",
-  3: "grid-cols-2",
-  4: "grid-cols-4",
-  5: "grid-cols-4",
-  6: "grid-cols-3",
-  7: "grid-cols-3",
-  8: "grid-cols-2",
-  9: "grid-cols-4",
-};
-
 export default function PublicationDetailPage() {
   const params = useParams();
   const id = parseInt(params.id as string, 10);
   const publication = publications.find((pub) => pub.id === id);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   if (!publication) {
     return (
@@ -147,8 +175,7 @@ export default function PublicationDetailPage() {
             w-full max-w-7xl mx-auto flex flex-col p-6 sm:p-8 md:p-10 min-h-[20vh]
             bg-black/25 backdrop-blur-md 
             border border-white/20 
-            rounded-2xl shadow-lg
-            hover:bg-black/30 hover:shadow-2xl hover:scale-[1.02] transition-all duration-700"
+            rounded-2xl shadow-lg"
           >
             <Header />
             <div className="flex-grow flex flex-col items-center justify-center text-center">
@@ -165,6 +192,10 @@ export default function PublicationDetailPage() {
     );
   }
 
+  const galleryImages = imagesMap[id]
+    ? imagesMap[id].filter((src) => src !== publication.image)
+    : [];
+
   return (
     <div>
       <div className="space-y-8">
@@ -173,8 +204,7 @@ export default function PublicationDetailPage() {
           w-full max-w-7xl mx-auto flex flex-col p-6 sm:p-8 md:p-10 min-h-[20vh]
           bg-black/25 backdrop-blur-md 
           border border-white/20 
-          rounded-2xl shadow-lg
-          hover:bg-black/30 hover:shadow-2xl hover:scale-[1.02] transition-all duration-700"
+          rounded-2xl shadow-lg"
         >
           <Header />
           <div className="flex-grow flex flex-col items-center justify-center text-center">
@@ -192,8 +222,7 @@ export default function PublicationDetailPage() {
           w-full max-w-7xl mx-auto p-6 sm:p-8 md:p-10
           bg-black/25 backdrop-blur-md 
           border border-white/20 
-          rounded-2xl shadow-lg
-          hover:bg-black/30 hover:shadow-2xl hover:scale-[1.02] transition-all duration-700"
+          rounded-2xl shadow-lg"
         >
           {publication.description.length > 1000 ? (
             <div className="flex flex-col items-center">
@@ -219,13 +248,22 @@ export default function PublicationDetailPage() {
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
               <div>
-                <Image
-                  src={publication.image}
-                  alt={publication.title}
-                  width={500}
-                  height={400}
-                  className="w-full h-80 object-cover rounded-lg mb-6"
-                />
+                {galleryImages.length > 0 ? (
+                  <Carousel
+                    images={galleryImages}
+                    currentIndex={currentIndex}
+                    setCurrentIndex={setCurrentIndex}
+                    alt={publication.title}
+                  />
+                ) : (
+                  <Image
+                    src={publication.image}
+                    alt={publication.title}
+                    width={500}
+                    height={400}
+                    className="w-full h-80 object-cover rounded-2xl"
+                  />
+                )}
               </div>
               <div>
                 {publication.description.split(". ").map((sentence, index) => (
@@ -241,35 +279,6 @@ export default function PublicationDetailPage() {
             </div>
           )}
         </div>
-
-        {imagesMap[id] && (
-          <div
-            className="
-            w-full max-w-7xl mx-auto p-6 sm:p-8 md:p-10
-            bg-black/25 backdrop-blur-md 
-            border border-white/20 
-            rounded-2xl shadow-lg
-            hover:bg-black/30 hover:shadow-2xl hover:scale-[1.02] transition-all duration-700"
-          >
-            <div className={`grid ${layoutMap[id]} gap-4`}>
-              {imagesMap[id]
-                .filter((src) => src !== publication.image)
-                .map((src, index) => (
-                  <Image
-                    key={index}
-                    src={src}
-                    alt={`Imagem ${index + 1} da publicação ${
-                      publication.title
-                    }`}
-                    width={300}
-                    height={200}
-                    className="w-full h-48 object-cover rounded-lg"
-                  />
-                ))}
-            </div>
-          </div>
-        )}
-
         <div className="flex justify-center">
           <Link
             href="/publicacoes"

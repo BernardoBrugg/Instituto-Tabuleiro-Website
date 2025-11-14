@@ -60,8 +60,7 @@ export default function PublicacoesPage() {
           bg-black/25 backdrop-blur-md 
           border border-white/20 
           rounded-2xl shadow-lg
-          opacity-0 transition-opacity duration-500
-          hover:bg-black/30 hover:shadow-2xl hover:scale-[1.02] transition-all duration-500"
+          opacity-0 transition-opacity duration-500"
         >
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {publications.map((pub) => (
