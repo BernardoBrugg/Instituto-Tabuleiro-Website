@@ -192,9 +192,7 @@ export default function PublicationDetailPage() {
     );
   }
 
-  const galleryImages = imagesMap[id]
-    ? imagesMap[id].filter((src) => src !== publication.image)
-    : [];
+  const galleryImages = imagesMap[id] || [];
 
   return (
     <div>
@@ -224,60 +222,37 @@ export default function PublicationDetailPage() {
           border border-white/20 
           rounded-2xl shadow-lg"
         >
-          {publication.description.length > 1000 ? (
-            <div className="flex flex-col items-center">
-              <Image
-                src={publication.image}
-                alt={publication.title}
-                width={800}
-                height={600}
-                className="w-full h-auto object-contain rounded-lg mb-6"
-              />
-              <div>
-                {publication.description.split(". ").map((sentence, index) => (
-                  <p key={index} className="text-white/80 mb-4">
-                    {sentence}.
-                  </p>
-                ))}
-                <p className="text-white/60">
-                  Publicado em:{" "}
-                  {new Date(publication.date).toLocaleDateString("pt-BR")}
-                </p>
-              </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+            <div>
+              {galleryImages.length > 0 ? (
+                <Carousel
+                  images={galleryImages}
+                  currentIndex={currentIndex}
+                  setCurrentIndex={setCurrentIndex}
+                  alt={publication.title}
+                />
+              ) : (
+                <Image
+                  src={publication.image}
+                  alt={publication.title}
+                  width={500}
+                  height={400}
+                  className="w-full h-auto object-cover rounded-2xl"
+                />
+              )}
             </div>
-          ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-              <div>
-                {galleryImages.length > 0 ? (
-                  <Carousel
-                    images={galleryImages}
-                    currentIndex={currentIndex}
-                    setCurrentIndex={setCurrentIndex}
-                    alt={publication.title}
-                  />
-                ) : (
-                  <Image
-                    src={publication.image}
-                    alt={publication.title}
-                    width={500}
-                    height={400}
-                    className="w-full h-80 object-cover rounded-2xl"
-                  />
-                )}
-              </div>
-              <div>
-                {publication.description.split(". ").map((sentence, index) => (
-                  <p key={index} className="text-white/80 mb-4 cursor-pointer">
-                    {sentence}.
-                  </p>
-                ))}
-                <p className="text-white/60">
-                  Publicado em:{" "}
-                  {new Date(publication.date).toLocaleDateString("pt-BR")}
+            <div>
+              {publication.description.split(". ").map((sentence, index) => (
+                <p key={index} className="text-white/80 mb-4 cursor-pointer">
+                  {sentence}.
                 </p>
-              </div>
+              ))}
+              <p className="text-white/60">
+                Publicado em:{" "}
+                {new Date(publication.date).toLocaleDateString("pt-BR")}
+              </p>
             </div>
-          )}
+          </div>
         </div>
         <div className="flex justify-center">
           <Link

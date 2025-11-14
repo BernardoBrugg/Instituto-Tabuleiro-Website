@@ -39,7 +39,7 @@ export default function Carousel({
           ))}
         </div>
       </div>
-      
+
       {/* Arrow buttons */}
       <button
         onClick={prev}
