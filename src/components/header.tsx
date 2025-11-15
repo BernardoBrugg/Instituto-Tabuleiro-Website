@@ -9,6 +9,7 @@ export default function Header() {
     { name: "Sobre", href: "/sobre" },
     { name: "Publicações", href: "/publicacoes" },
     { name: "Localização", href: "/local" },
+    { name: "Contato", href: "/contato" },
   ];
 
   const [isOpen, setIsOpen] = useState(false);
@@ -81,12 +82,6 @@ export default function Header() {
               fill="white"
             />
           </svg>
-        </a>
-        <a
-          href="contato"
-          className="px-5 py-2 text-sm border border-white/50 rounded-full hover:bg-white/20 hover:scale-105 hover:shadow-lg hover:text-white transition-all duration-500 ease-in-out cursor-pointer"
-        >
-          Contato
         </a>
       </div>
     </header>
