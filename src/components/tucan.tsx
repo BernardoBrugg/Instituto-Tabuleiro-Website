@@ -21,8 +21,21 @@ function TucanModel({ onLoaded }: { onLoaded?: () => void }) {
         y: -(event.clientY / window.innerHeight) * 2 + 1,
       });
     };
+    const handleTouchMove = (event: TouchEvent) => {
+      if (event.touches.length > 0) {
+        const touch = event.touches[0];
+        setMousePos({
+          x: (touch.clientX / window.innerWidth) * 2 - 1,
+          y: -(touch.clientY / window.innerHeight) * 2 + 1,
+        });
+      }
+    };
     window.addEventListener("mousemove", handleMouseMove);
-    return () => window.removeEventListener("mousemove", handleMouseMove);
+    window.addEventListener("touchmove", handleTouchMove);
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+      window.removeEventListener("touchmove", handleTouchMove);
+    };
   }, []);
 
   useFrame((state, delta) => {
