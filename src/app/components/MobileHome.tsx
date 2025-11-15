@@ -66,9 +66,9 @@ export default function MobileHome() {
                   <Image
                     src="/logo instituto.svg"
                     alt="Instituto Tabuleiro Logo"
-                    width={400}
-                    height={120}
-                    className={`absolute inset-0 hover:scale-105 transition-all duration-500 cursor-pointer transition-all duration-2000 ${
+                    width={250}
+                    height={75}
+                    className={`absolute inset-0 hover:scale-105 transition-all duration-500 cursor-pointer transition-all duration-2000 md:w-[400px] md:h-[120px] ${
                       transitionPhase === "tucan"
                         ? "opacity-0 -translate-y-12 pointer-events-none"
                         : "opacity-100 translate-y-0"
