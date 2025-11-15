@@ -61,7 +61,7 @@ export default function DesktopHome() {
 
               <div className="text-left">
                 <Image
-                  src="/logo instituto.svg"
+                  src="/logo.svg"
                   alt="Instituto Tabuleiro Logo"
                   width={300}
                   height={90}

@@ -64,7 +64,7 @@ export default function MobileHome() {
               <div className="text-center">
                 <div className="relative min-h-[200px] flex items-center justify-center">
                   <Image
-                    src="/logo instituto.svg"
+                    src="/logo.svg"
                     alt="Instituto Tabuleiro Logo"
                     width={250}
                     height={75}
