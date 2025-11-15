@@ -61,11 +61,11 @@ export default function DesktopHome() {
 
               <div className="text-left">
                 <Image
-                  src="/logo instituto.svg"
+                  src="/logo.svg"
                   alt="Instituto Tabuleiro Logo"
-                  width={400}
-                  height={120}
-                  className="hover:scale-105 transition-all duration-500 cursor-pointer"
+                  width={300}
+                  height={90}
+                  className="scale-135 hover:scale-140 transition-all duration-500 cursor-pointer ml-16"
                 />
                 <p className="mt-4 max-w-xl text-white/80 hover:text-white/90 transition-colors duration-500">
                   Uma jornada no coração da Mata Atlântica para encontrar a
