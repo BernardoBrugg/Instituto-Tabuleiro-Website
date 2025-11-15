@@ -63,8 +63,8 @@ export default function DesktopHome() {
                 <Image
                   src="/logo instituto.svg"
                   alt="Instituto Tabuleiro Logo"
-                  width={400}
-                  height={120}
+                  width={300}
+                  height={90}
                   className="hover:scale-105 transition-all duration-500 cursor-pointer"
                 />
                 <p className="mt-4 max-w-xl text-white/80 hover:text-white/90 transition-colors duration-500">
