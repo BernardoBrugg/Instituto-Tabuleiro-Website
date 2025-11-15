@@ -24,7 +24,7 @@ export default function Header() {
           height={50}
           className="mr-4 rounded-full hover:scale-105 transition-all duration-500 ease-in-out"
         />
-        <h1 className="text-xl font-bold tracking-wider hover:text-white hover:scale-105 transition-all duration-500 cursor-pointer">
+        <h1 className="text-xl font-inter tracking-wider hover:text-white hover:scale-105 transition-all duration-500 cursor-pointer">
           Instituto Tabuleiro
         </h1>
       </div>
