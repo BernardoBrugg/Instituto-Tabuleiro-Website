@@ -5,7 +5,7 @@ import { useGLTF, Html, useEnvironment } from "@react-three/drei";
 import { useRef, useState, useEffect } from "react";
 import * as THREE from "three";
 
-function TucanModel() {
+function TucanModel({ onLoaded }: { onLoaded?: () => void }) {
   const { scene } = useGLTF("/toucan-optimized.glb");
   const groupRef = useRef<THREE.Group>(null);
   const meshRef = useRef<THREE.Group>(null);
@@ -21,8 +21,21 @@ function TucanModel() {
         y: -(event.clientY / window.innerHeight) * 2 + 1,
       });
     };
+    const handleTouchMove = (event: TouchEvent) => {
+      if (event.touches.length > 0) {
+        const touch = event.touches[0];
+        setMousePos({
+          x: (touch.clientX / window.innerWidth) * 2 - 1,
+          y: -(touch.clientY / window.innerHeight) * 2 + 1,
+        });
+      }
+    };
     window.addEventListener("mousemove", handleMouseMove);
-    return () => window.removeEventListener("mousemove", handleMouseMove);
+    window.addEventListener("touchmove", handleTouchMove);
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+      window.removeEventListener("touchmove", handleTouchMove);
+    };
   }, []);
 
   useFrame((state, delta) => {
@@ -50,6 +63,12 @@ function TucanModel() {
     }
   });
 
+  useEffect(() => {
+    if (scene && onLoaded) {
+      onLoaded();
+    }
+  }, [scene, onLoaded]);
+
   if (!scene) {
     return (
       <Html center>
@@ -71,7 +90,15 @@ function TucanModel() {
   );
 }
 
-export default function Tucan() {
+export default function Tucan({ onLoaded }: { onLoaded?: () => void }) {
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    if (isLoaded && onLoaded) {
+      onLoaded();
+    }
+  }, [isLoaded, onLoaded]);
+
   return (
     <div style={{ height: "400px", width: "400px" }}>
       <Canvas
@@ -86,7 +113,7 @@ export default function Tucan() {
         <pointLight position={[-10, 10, 10]} intensity={8.5} />
         <pointLight position={[10, -10, 10]} intensity={8.5} />
         <pointLight position={[0, 0, -5]} intensity={88.5} />
-        <TucanModel />
+        <TucanModel onLoaded={() => setIsLoaded(true)} />
       </Canvas>
     </div>
   );
