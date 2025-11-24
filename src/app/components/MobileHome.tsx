@@ -7,7 +7,7 @@ import Tucan from "@/components/tucan";
 import scrollIntoView from "scroll-into-view-if-needed";
 import Image from "next/image";
 
-export default function MobileHome() {
+export default function MobileHome({ onModelLoaded }: { onModelLoaded?: () => void }) {
   const sobreRef = useRef<HTMLDivElement>(null);
   const publicacoesRef = useRef<HTMLDivElement>(null);
   const localRef = useRef<HTMLDivElement>(null);
@@ -80,7 +80,10 @@ export default function MobileHome() {
                       transitionPhase === "tucan" ? "opacity-100" : "opacity-0"
                     }`}
                   >
-                    <Tucan onLoaded={() => setTucanLoaded(true)} />
+                    <Tucan onLoaded={() => {
+                      setTucanLoaded(true);
+                      if (onModelLoaded) onModelLoaded();
+                    }} />
                   </div>
                 </div>
 

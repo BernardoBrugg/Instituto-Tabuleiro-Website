@@ -7,7 +7,7 @@ import Tucan from "@/components/tucan";
 import scrollIntoView from "scroll-into-view-if-needed";
 import Image from "next/image";
 
-export default function DesktopHome() {
+export default function DesktopHome({ onModelLoaded }: { onModelLoaded?: () => void }) {
   const sobreRef = useRef<HTMLDivElement>(null);
   const publicacoesRef = useRef<HTMLDivElement>(null);
   const localRef = useRef<HTMLDivElement>(null);
@@ -84,7 +84,7 @@ export default function DesktopHome() {
               </div>
 
               <div className="flex-shrink-0">
-                <Tucan />
+                <Tucan onLoaded={onModelLoaded} />
               </div>
             </div>
           </section>
