@@ -15,14 +15,14 @@ export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="flex items-center justify-between w-full mb-4">
+    <header className="flex items-center justify-between w-full mb-4 relative z-10">
       <div className="flex items-center hover:scale-105 transition-all duration-500 ease-in-out cursor-pointer">
         <Image
           src="/logo.jpg"
           alt="Instituto Tabuleiro Logo"
           width={50}
           height={50}
-          className="mr-4 rounded-full hover:scale-105 transition-all duration-500 ease-in-out"
+          className="mr-4 rounded-full scale-110 hover:scale-115 transition-all duration-500 ease-in-out"
         />
         <h1 className="text-xl font-inter tracking-wider hover:text-white hover:scale-105 transition-all duration-500 cursor-pointer">
           Instituto Tabuleiro

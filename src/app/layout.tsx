@@ -47,6 +47,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
           name="description"
           content="Organização não governamental (ONG) - Pesquisa científica, uso público, educação ambiental e mobilização comunitária no território abrangido pelo Parque Estadual da Serra do Tabuleiro."
         />
+        <link rel="icon" href="/logo.svg" />
       </head>
       <body
         className={`${inter.className} bg-center bg-no-repeat bg-fixed text-white`}

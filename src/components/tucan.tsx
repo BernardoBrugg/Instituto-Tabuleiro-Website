@@ -100,7 +100,7 @@ export default function Tucan({ onLoaded }: { onLoaded?: () => void }) {
   }, [isLoaded, onLoaded]);
 
   return (
-    <div style={{ height: "400px", width: "400px" }}>
+    <div className="w-[250px] h-[250px] md:w-[400px] md:h-[400px]">
       <Canvas
         camera={{ position: [0, 0, -5] }}
         style={{ height: "100%", width: "100%" }}

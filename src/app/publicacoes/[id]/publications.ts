@@ -118,7 +118,8 @@ export const publications = [
       "Este livro não é o resultado de um trabalho programado, mas do envolvimento do autor com as coisas naturais e com uma quantidade imensa de pessoas. Muitas dessas pessoas foram guiadas, auxiliadas, informadas e orientadas, ao longo de mais de 30 anos, por Fernando Maciel Brüggemann e, com ele, geraram informações científicas da maior relevância, às quais, em geral, o público leigo não tem acesso. Com o objetivo de promover a divulgação do que existe de mais belo na Serra do Tabuleiro e em suas cercanias, o autor nos convida para conhecer sua casa e, como nosso anfitrião, recebe-nos para uma confraternização, abrindo janelas e portas de mirantes, de onde observamos os mais lindos lugares que se pode encontrar naquela região, ao mesmo tempo em que, repetindo uma rotina de dar inveja a muitos naturalistas, leva-nos a passear por caminhos fantásticos, presenteando-nos com imagens e informações de seres vivos maravilhosos de nossa fauna e flora, assim como tem feito ao longo desses anos com turistas, alunos, pesquisadores e outros tantos admiradores da natureza. Esta obra não é apenas uma pequena parte do resultado do envolvimento deste biólogo com a natureza. É muito mais a demonstração de toda a paixão deste grande naturalista pelo que faz e pelo lugar onde vive.",
     date: "2025-01-01",
     link: "/publicacoes/9",
-    image: "/Livro%20Serra%20do%20Tabuleiro/Captura%20de%20tela%20de%202025-11-15%2010-31-24.png",
+    image:
+      "/Livro%20Serra%20do%20Tabuleiro/Captura%20de%20tela%20de%202025-11-15%2010-31-24.png",
     type: "LANÇAMENTO DE LIVRO",
     resume:
       "Livro sobre a biodiversidade da Serra do Tabuleiro, com registros de fauna e flora.",
