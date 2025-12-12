@@ -104,15 +104,8 @@ export default function DesktopHome({ onModelLoaded }: { onModelLoaded?: () => v
             Sobre o Instituto
           </h2>
           <p className="text-center text-white/80 mb-8 hover:text-white/90 transition-colors duration-500">
-            A Associação para a Conservação do Parque Estadual da Serra do
-            Tabuleiro - Instituto Tabuleiro - foi constituída em 1 de novembro
-            de 2015, reunindo profissionais de diversas áreas de conhecimento
-            que atuam há mais de 20 anos nas áreas de pesquisa científica, uso
-            público, educação ambiental e mobilização comunitária no território
-            abrangido pelo Parque Estadual da Serra do Tabuleiro e entorno.
-            Nosso objetivo de criação foi reunir em uma mesma Instituição um
-            coletivo de profissionais experientes e com vasta atuação dentro de
-            um território específico. Nossa missão é auxiliar a gestão do Parque
+            O Instituto Tabuleiro foi constituída em 1 de novembro
+            de 2015. Nossa missão é auxiliar a gestão do Parque
             e promover a conservação de seus ecossistemas naturais.
           </p>
           <div className="text-center">
