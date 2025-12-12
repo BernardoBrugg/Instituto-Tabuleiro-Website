@@ -12,14 +12,9 @@ interface RootLayoutProps {
 }
 
 const backgroundImages = [
-  "/Fotos extras/Canon EOS 6D_20180313_174530.jpg",
-  "/Fotos extras/DSC_7455.JPG",
-  "/Fotos extras/DSC_7461.JPG",
   "/Fotos extras/DSC_7486.JPG",
   "/Fotos extras/DSC_7501.JPG",
   "/Fotos extras/DSC_9044.JPG",
-  "/Fotos extras/DSC01886.JPG",
-  "/Fotos extras/IMG_0078.JPG",
   "/Fotos extras/capa.jpg",
 ];
 
@@ -37,6 +32,12 @@ export default function RootLayout({ children }: RootLayoutProps) {
 
     setBackgroundImage(backgroundImages[nextIndex]);
     localStorage.setItem("backgroundIndex", nextIndex.toString());
+
+    // Preload all background images to improve loading times
+    backgroundImages.forEach((src) => {
+      const img = new Image();
+      img.src = src;
+    });
   }, []);
 
   return (
