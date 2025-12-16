@@ -85,7 +85,7 @@ export const publications = [
   {
     id: 7,
     title:
-      "Programa de Educação Ambientalpara Conservação da espécie endêmica Cavia intermedia, o Preá do Arquipélago de Moleques do Sul - Santa Catarina - Brasil",
+      "Programa de Educação Ambiental para Conservação da espécie endêmica Cavia intermedia, o Preá do Arquipélago de Moleques do Sul - Santa Catarina - Brasil",
     description:
       "O Preá-de-Moleques (Cavia intermedia) é endêmico da Ilha de Moleques-do-Sul, zona intangível do Parque Estadual da Serra do Tabuleiro (SC). Criticamente ameaçado em todos os níveis (global, nacional e estadual), é considerado um dos vinte pequenos mamíferos mais raros do planeta. As principais ameaças à conservação são o desembarque na ilha e ausência de informações, por parte do público em geral, sobre sua vulnerabilidade. O Programa de Educação Ambiental para a Conservação do Preá-de-Moleques ocorreu entre os anos de 2022/2024 em três comunidades costeiras do Estado, executado pelo Instituto do Tabuleiro e IMA-SC e financiado pela Karoon Energy. O Programa de Educação Ambiental para a Conservação do Preá-de-Moleques é composto por quatro projetos integrados: curso online para docentes; atividades educativas nas escolas; publicação de livro e educomunicação socioambiental, envolvendo diretamente três escolas das comunidades pesqueiras do sul de Florianópolis (Pântano do Sul) e do município de Palhoça (Pinheira e Guarda do Embaú), além dos pescadores e usuários de náuticas localizadas nestes municípios. O recorte espacial se deu pela proximidade com o Arquipélago de Moleques do Sul. O trabalho compõe a ação 4.1 do Plano de Ação Estadual para a Conservação do Preá-de Moleques-do-Sul (Cavia intermedia), elaborado pelo Instituto Tabuleiro em parceria com o Instituto do Meio Ambiente de Santa Catarina (IMA). O objetivo foi promover a divulgação científica e o engajamento social na conservação da espécie na Grande Florianópolis/SC. Além de atividades educativas nas escolas, foram elaborados e distribuídos materiais didáticos, realizados eventos socioambientais e reuniões com os pescadores para o intercâmbio de conhecimentos construídos com as comunidades escolares. Duração: 2022 até o momento Financiador: Karoon Petróleo e Gás Ltda.",
     date: "2022-01-01",
@@ -99,7 +99,7 @@ export const publications = [
   {
     id: 8,
     title:
-      "Recuperação de área degradada em trecho de Mata Ciliar do Rio Maciambu na Terra Indígena Maciambu",
+      "Refloresta Maciambu: Recuperação de mata ciliar e troca de saberes na Terra Indígena Maciambu (Aldeia Pira Rupá/SC)",
     description:
       "O projeto busca realizar a recuperação de uma área degradada em trecho de Mata Ciliar do Rio Maciambu, no interior da Terra Indígena (TI) Maciambu (Aldeia Pira Rupá), da etnia M’Bya Guarani, localizado ao sul do município de Palhoça, na região da Grande Florianópolis (SC). A área está inserida no bioma Mata Atlântica, limítrofe ao Parque Estadual da Serra do Tabuleiro (PAEST), a maior unidade de conservação de proteção integral do estado de Santa Catarina. As atividades do projeto estão ancoradas na troca de saberes entre indígenas moradores da TI e pesquisadoras do Instituto Tabuleiro, incluindo ações de reconhecimento e mapeamento do uso do território indígena, identificação etnobotânica de árvores nativas, monitoramento e marcação de matrizes para coleta de sementes, oficinas de viveiragem e mutirões de plantio de mudas nativas. A área a ser inicialmente recuperada é de aproximadamente 2.500 m2, onde serão plantadas 1000 mudas. Além do plantio de espécies da Mata Atlântica na mata ciliar, o projeto atua com espécies de valor cultural a partir da identificação etnobotânica de plantas que possuam usos medicinais, alimentícios e espirituais para a comunidade da Aldeia. Duração: 2025 até o momento Financiadores: Fundo Casa Socioambiental.",
     date: "2025-01-01",
@@ -158,7 +158,7 @@ export const publications = [
       "Grupo Técnico Científico de Apoio à Restauração Ecológica da Baixada do Massiambú",
     description:
       "O Grupo Técnico Científico de Apoio à Restauração Ecológica da Restinga da Baixada do Massiambú foi criado em 2018 e é composto por instituições públicas, privadas e do terceiro setor que atuam na conservação e restauração ecológica da restinga do Parque Estadual da Serra do Tabuleiro. O grupo desenvolve ações integradas de pesquisa, monitoramento e restauração, incluindo o controle de espécies exóticas invasoras como o Pinus, monitoramento da flora nativa e recuperação de áreas degradadas por incêndios. As atividades são coordenadas de forma participativa, envolvendo pesquisadores, gestores ambientais e comunidades locais.",
-    date: "2018-01-01",
+    date: "2019-01-01",
     link: "/publicacoes/12",
     image:
       "/4.1%20Grupo%20T%C3%A9cnico%20Cient%C3%ADfico%20de%20Apoio%20%C3%A0%20Restaura%C3%A7%C3%A3o%20Ecol%C3%B3gica%20da%20Baixada%20do%20Massiamb%C3%BA%20/Incendio%202018%20tlvz%20(1).jpg",
@@ -172,7 +172,7 @@ export const publications = [
       "Conselho Consultivo da Área de Proteção Ambiental da Baleia Franca (CONAPABF-ICMBio)",
     description:
       "O Instituto Tabuleiro participa como membro titular do Conselho Consultivo da Área de Proteção Ambiental da Baleia Franca (CONAPABF), unidade de conservação federal gerida pelo Instituto Chico Mendes de Conservação da Biodiversidade (ICMBio). O conselho é um órgão colegiado de caráter consultivo que tem por finalidade contribuir para o cumprimento dos objetivos da unidade de conservação, promovendo a participação social na gestão da APA. O Instituto Tabuleiro contribui com conhecimento técnico-científico sobre a biodiversidade marinha e costeira da região, auxiliando na tomada de decisões sobre conservação e uso sustentável dos recursos naturais.",
-    date: "2020-01-01",
+    date: "2018-01-01",
     link: "/publicacoes/13",
     image:
       "/4.1.%20Conselho%20Consultivo%20da%20%C3%81rea%20de%20Prote%C3%A7%C3%A3o%20Ambiental%20da%20Baleia%20Franca%20(CONAPABF-ICMBio)./WhatsApp%20Image%202025-08-04%20at%2014.13.37.jpeg",
