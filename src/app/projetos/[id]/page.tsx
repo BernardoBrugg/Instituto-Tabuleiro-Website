@@ -251,7 +251,7 @@ export default function PublicationDetailPage() {
         </div>
         <div className="flex justify-center">
           <Link
-            href="/publicacoes"
+            href="/projetos"
             className="px-6 py-3 bg-white/10 border border-white/30 rounded-full hover:bg-white/20 hover:scale-105 transition-all duration-700 text-white hover:text-white cursor-pointer"
           >
             ← Voltar

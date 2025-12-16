@@ -54,6 +54,7 @@ Site moderno e responsivo para o Instituto Tabuleiro, construído com Next.js e 
    ```
 
    Adicione sua chave da API do Google Maps:
+
    ```
    NEXT_PUBLIC_GOOGLE_MAPS_API_KEY=sua_chave_aqui
    ```

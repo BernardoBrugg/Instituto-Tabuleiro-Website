@@ -131,7 +131,7 @@ export default function DesktopHome({
           </p>
           <div className="text-center">
             <Link
-              href="/publicacoes"
+              href="/projetos"
               className="px-8 py-3 bg-white/10 border border-white/30 rounded-full hover:bg-white/20 hover:scale-105 hover:shadow-lg transition-all duration-500 text-white hover:text-white cursor-pointer"
             >
               Ver Publicações
