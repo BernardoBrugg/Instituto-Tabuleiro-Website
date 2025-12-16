@@ -1,98 +1,134 @@
 # Instituto Tabuleiro Website
 
-A modern, responsive website for the Instituto Tabuleiro, built with Next.js and TypeScript. The site showcases the institute's work in environmental conservation, research, and education in the Serra do Tabuleiro region of Santa Catarina, Brazil.
+Site moderno e responsivo para o Instituto Tabuleiro, construído com Next.js e TypeScript. O site apresenta o trabalho do instituto na conservação ambiental, pesquisa e educação na região da Serra do Tabuleiro em Santa Catarina, Brasil.
 
-## Features
+## Funcionalidades
 
-- **Responsive Design**: Optimized for desktop, tablet, and mobile devices
-- **Dynamic Publications**: Detailed pages for research projects, conservation plans, and educational programs
-- **Interactive Elements**: Smooth animations and hover effects using Tailwind CSS
-- **Multilingual Support**: Basic structure for internationalization (German folder present)
-- **3D Model Integration**: Toucan 3D model display using Three.js
-- **Contact System**: Contact form and information display
-- **Localization Modal**: Interactive map and location information
+- **Design Responsivo**: Otimizado para desktop, tablet e dispositivos móveis com layouts específicos
+- **Projetos Dinâmicos**: Páginas detalhadas para projetos de pesquisa, planos de conservação e programas educacionais
+- **Elementos Interativos**: Animações suaves e efeitos hover usando Tailwind CSS
+- **Integração de Modelo 3D**: Modelo 3D interativo de tucano usando Three.js com React Three Fiber
+- **Mapa Interativo**: Integração com Google Maps mostrando a área do Parque Estadual
+- **Tela de Carregamento**: Loading screen animada com progresso
+- **Backgrounds Dinâmicos**: Rotação automática de imagens de fundo
 
-## Pages
+## Páginas
 
-- **Home**: Landing page with hero section and institute overview
-- **Sobre (About)**: Information about the institute's mission and work
-- **Publicações (Publications)**: List and detail views of research projects and publications
-- **Contato (Contact)**: Contact information and form
-- **Local (Location)**: Interactive map and location details
+- **Home**: Landing page com hero section, modelo 3D do tucano e visão geral do instituto
+- **Sobre**: Informações sobre história, missão, visão, valores e equipe do instituto
+- **Projetos**: Lista e visualização detalhada de projetos de pesquisa e publicações com carrossel de imagens
+- **Localização**: Mapa interativo do Google Maps com polígono da área do parque
+- **Contato**: Informações de contato do instituto
 
-## Technologies Used
+## Tecnologias Utilizadas
 
-- **Next.js 14**: React framework for server-side rendering and static site generation
-- **TypeScript**: Type-safe JavaScript
-- **Tailwind CSS**: Utility-first CSS framework
-- **React**: Component-based UI library
-- **Three.js**: 3D graphics library for the toucan model
-- **Next.js Image**: Optimized image loading
-- **ESLint**: Code linting
+- **Next.js 15**: Framework React com Turbopack para desenvolvimento
+- **TypeScript**: JavaScript com tipagem estática
+- **Tailwind CSS 4**: Framework CSS utility-first
+- **React 19**: Biblioteca de UI baseada em componentes
+- **Three.js / React Three Fiber**: Biblioteca de gráficos 3D para o modelo do tucano
+- **@react-google-maps/api**: Integração com Google Maps
+- **react-icons**: Biblioteca de ícones
+- **scroll-into-view-if-needed**: Scroll suave para navegação
+- **ESLint**: Linting de código
 
-## Installation
+## Instalação
 
-1. Clone the repository:
+1. Clone o repositório:
 
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/BernardoBrugg/P01front.git
    cd P01front
    ```
 
-2. Install dependencies:
+2. Instale as dependências:
 
    ```bash
    npm install
    ```
 
-3. Run the development server:
+3. Configure as variáveis de ambiente:
+
+   ```bash
+   cp .env.example .env.local
+   ```
+
+   Adicione sua chave da API do Google Maps:
+
+   ```
+   NEXT_PUBLIC_GOOGLE_MAPS_API_KEY=sua_chave_aqui
+   ```
+
+4. Execute o servidor de desenvolvimento:
 
    ```bash
    npm run dev
    ```
 
-4. Open [http://localhost:3000](http://localhost:3000) in your browser.
+5. Abra [http://localhost:3000](http://localhost:3000) no navegador.
 
-## Project Structure
+## Estrutura do Projeto
 
 ```
 src/
-├── app/                    # Next.js app router pages
-│   ├── page.tsx           # Home page
-│   ├── sobre/page.tsx     # About page
-│   ├── publicacoes/       # Publications section
-│   │   ├── page.tsx       # Publications list
-│   │   └── [id]/page.tsx  # Publication detail
-│   ├── contato/page.tsx   # Contact page
-│   ├── local/page.tsx     # Location page
-│   └── layout.tsx         # Root layout
-├── components/            # Reusable React components
-│   ├── header.tsx         # Navigation header
-│   ├── footer.tsx         # Site footer
-│   ├── cardPublications.tsx # Publication card component
-│   ├── cardContacts.tsx   # Contact card component
-│   ├── localizationModal.tsx # Location modal
-│   └── tucan.tsx          # 3D toucan component
-└── public/                # Static assets
-    ├── fotosPublicacoes/  # Publication images
-    └── ...                # Other assets
+├── app/
+│   ├── page.tsx              # Home page
+│   ├── layout.tsx            # Layout raiz
+│   ├── globals.css           # Estilos globais
+│   ├── components/
+│   │   ├── DesktopHome.tsx   # Layout home desktop
+│   │   ├── MobileHome.tsx    # Layout home mobile
+│   │   └── Carousel.tsx      # Componente carrossel
+│   ├── sobre/
+│   │   └── page.tsx          # Página sobre
+│   ├── projetos/
+│   │   ├── page.tsx          # Lista de projetos
+│   │   ├── [id]/
+│   │   │   ├── page.tsx      # Detalhe do projeto
+│   │   │   └── publications.ts
+│   │   └── components/
+│   │       └── Carousel.tsx
+│   ├── local/
+│   │   └── page.tsx          # Página de localização
+│   └── contato/
+│       └── page.tsx          # Página de contato
+├── components/
+│   ├── header.tsx            # Cabeçalho de navegação
+│   ├── footer.tsx            # Rodapé do site
+│   ├── tucan.tsx             # Componente 3D do tucano
+│   ├── LoadingScreen.tsx     # Tela de carregamento
+│   ├── cardPublications.tsx  # Card de publicação
+│   ├── cardContacts.tsx      # Card de contato
+│   └── localizationModal.tsx # Mapa de localização
+└── public/
+    ├── logo.svg
+    ├── logo.jpg
+    ├── toucan-optimized.glb  # Modelo 3D do tucano
+    ├── Fotos extras/         # Imagens de background
+    └── [pastas de projetos]/ # Imagens dos projetos
 ```
 
 ## Scripts
 
-- `npm run dev`: Start development server
-- `npm run build`: Build for production
-- `npm run start`: Start production server
-- `npm run lint`: Run ESLint
+- `npm run dev`: Inicia servidor de desenvolvimento com Turbopack
+- `npm run build`: Build para produção
+- `npm run start`: Inicia servidor de produção
+- `npm run lint`: Executa ESLint
 
-## Deployment
+## Deploy
 
-The site is configured for deployment on Vercel or any platform supporting Next.js.
+O site está configurado para deploy na Vercel ou qualquer plataforma que suporte Next.js.
 
-## Contributing
+## Contribuindo
 
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Run tests and linting
-5. Submit a pull request
+1. Faça um fork do repositório
+2. Crie uma branch de feature
+3. Faça suas alterações
+4. Execute testes e linting
+5. Envie um pull request
+
+## Desenvolvido por
+
+Bernardo Brüggemann - Estudante de Engenharia
+
+[GitHub](https://github.com/BernardoBrugg/P01front.git)

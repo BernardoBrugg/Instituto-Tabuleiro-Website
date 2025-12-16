@@ -18,12 +18,15 @@ const backgroundImages = [
   "/Fotos extras/capa.jpg",
 ];
 
+const defaultBackground = "/Fotos extras/capa.jpg";
+
 export default function RootLayout({ children }: RootLayoutProps) {
-  const [backgroundImage, setBackgroundImage] = useState(
-    "/Fotos extras/capa.jpg"
-  );
+  const [mounted, setMounted] = useState(false);
+  const [backgroundImage, setBackgroundImage] = useState(defaultBackground);
 
   useEffect(() => {
+    setMounted(true);
+    
     const currentIndex = parseInt(
       localStorage.getItem("backgroundIndex") || "0",
       10
@@ -33,12 +36,13 @@ export default function RootLayout({ children }: RootLayoutProps) {
     setBackgroundImage(backgroundImages[nextIndex]);
     localStorage.setItem("backgroundIndex", nextIndex.toString());
 
-    // Preload all background images to improve loading times
     backgroundImages.forEach((src) => {
-      const img = new Image();
+      const img = new window.Image();
       img.src = src;
     });
   }, []);
+
+  const currentBackground = mounted ? backgroundImage : defaultBackground;
 
   return (
     <html lang="pt-BR">
@@ -53,13 +57,12 @@ export default function RootLayout({ children }: RootLayoutProps) {
       <body
         className={`${inter.className} bg-center bg-no-repeat bg-fixed text-white`}
         style={{
-          backgroundImage: backgroundImage
-            ? `url('${backgroundImage}')`
-            : "url('/Fotos extras/capa.jpg')",
-          backgroundSize: "100% 100%",
+          backgroundImage: `url('${currentBackground}')`,
+          backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
           backgroundAttachment: "fixed",
-          backgroundPosition: "center",
+          backgroundPosition: "center center",
+          minHeight: "100vh",
         }}
       >
         <main className="flex items-center justify-center min-h-screen p-4 sm:p-8">

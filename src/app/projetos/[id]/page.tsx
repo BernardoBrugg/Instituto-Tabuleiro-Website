@@ -167,17 +167,17 @@ export default function PublicationDetailPage() {
         <div className="space-y-8">
           <div
             className="
-            w-full max-w-7xl mx-auto flex flex-col p-6 sm:p-8 md:p-10 min-h-[20vh]
+            w-full max-w-7xl mx-auto flex flex-col p-4 sm:p-6 md:p-10 min-h-[20vh]
             bg-black/25 backdrop-blur-md 
             border border-white/20 
             rounded-2xl shadow-lg"
           >
             <Header />
             <div className="flex-grow flex flex-col items-center justify-center text-center">
-              <h2 className="text-5xl md:text-7xl font-bold tracking-tight text-white leading-tight hover:text-white hover:scale-105 transition-all duration-700 cursor-pointer">
+              <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold tracking-tight text-white leading-tight hover:text-white hover:scale-105 transition-all duration-700 cursor-pointer">
                 Publicação não encontrada
               </h2>
-              <p className="mt-4 max-w-xl text-white/80 hover:text-white/90 transition-colors duration-700 ease-in-out">
+              <p className="mt-4 max-w-xl text-sm sm:text-base text-white/80 hover:text-white/90 transition-colors duration-700 ease-in-out">
                 Verifique o ID da publicação.
               </p>
             </div>
@@ -191,20 +191,20 @@ export default function PublicationDetailPage() {
 
   return (
     <div>
-      <div className="space-y-8">
+      <div className="space-y-4 sm:space-y-8">
         <div
           className="
-          w-full max-w-7xl mx-auto flex flex-col p-6 sm:p-8 md:p-10 min-h-[20vh]
+          w-full max-w-7xl mx-auto flex flex-col p-4 sm:p-6 md:p-10 min-h-[15vh] sm:min-h-[20vh]
           bg-black/25 backdrop-blur-md 
           border border-white/20 
           rounded-2xl shadow-lg"
         >
           <Header />
-          <div className="flex-grow flex flex-col items-center justify-center text-center">
-            <h2 className="text-5xl md:text-5xl font-bold tracking-tight text-white leading-tight ">
+          <div className="flex-grow flex flex-col items-center justify-center text-center px-2">
+            <h2 className="text-xl sm:text-2xl md:text-4xl lg:text-5xl font-bold tracking-tight text-white leading-tight">
               {publication.title}
             </h2>
-            <p className="mt-4 max-w-xl text-white/80 hover:text-white/90 hover:scale-105 transition-colors duration-700 ease-in-out cursor-pointer">
+            <p className="mt-2 sm:mt-4 max-w-xl text-sm sm:text-base text-white/80 hover:text-white/90 hover:scale-105 transition-colors duration-700 ease-in-out cursor-pointer">
               {publication.type}
             </p>
           </div>
@@ -212,13 +212,13 @@ export default function PublicationDetailPage() {
 
         <div
           className="
-          w-full max-w-7xl mx-auto p-6 sm:p-8 md:p-10
+          w-full max-w-7xl mx-auto p-4 sm:p-6 md:p-10
           bg-black/25 backdrop-blur-md 
           border border-white/20 
           rounded-2xl shadow-lg"
         >
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
-            <div>
+          <div className="flex flex-col md:grid md:grid-cols-2 gap-6 md:gap-12 items-start">
+            <div className="w-full max-h-[50vh] sm:max-h-[60vh] md:max-h-none overflow-hidden rounded-2xl">
               {galleryImages.length > 0 ? (
                 <Carousel
                   images={galleryImages}
@@ -232,27 +232,27 @@ export default function PublicationDetailPage() {
                   alt={publication.title}
                   width={500}
                   height={400}
-                  className="w-full h-auto object-cover rounded-2xl"
+                  className="w-full h-auto max-h-[50vh] sm:max-h-[60vh] md:max-h-none object-cover rounded-2xl"
                 />
               )}
             </div>
-            <div>
+            <div className="space-y-3 sm:space-y-4">
               {publication.description.split(". ").map((sentence, index) => (
-                <p key={index} className="text-white/80 mb-4 cursor-pointer">
+                <p key={index} className="text-sm sm:text-base text-white/80 cursor-pointer">
                   {sentence}.
                 </p>
               ))}
-              <p className="text-white/60">
+              <p className="text-xs sm:text-sm text-white/60 pt-2">
                 Publicado em:{" "}
                 {new Date(publication.date).toLocaleDateString("pt-BR")}
               </p>
             </div>
           </div>
         </div>
-        <div className="flex justify-center">
+        <div className="flex justify-center pb-4">
           <Link
-            href="/publicacoes"
-            className="px-6 py-3 bg-white/10 border border-white/30 rounded-full hover:bg-white/20 hover:scale-105 transition-all duration-700 text-white hover:text-white cursor-pointer"
+            href="/projetos"
+            className="px-4 sm:px-6 py-2 sm:py-3 text-sm sm:text-base bg-white/10 border border-white/30 rounded-full hover:bg-white/20 hover:scale-105 transition-all duration-700 text-white hover:text-white cursor-pointer"
           >
             ← Voltar
           </Link>

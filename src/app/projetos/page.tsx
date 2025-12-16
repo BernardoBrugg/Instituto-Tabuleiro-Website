@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Header from "@/components/header";
 import CardPublications from "@/components/cardPublications";
 import { publications } from "./[id]/publications";
@@ -8,8 +8,12 @@ import { publications } from "./[id]/publications";
 export default function PublicacoesPage() {
   const introRef = useRef(null);
   const cardsRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
+    // Garante que o conteúdo seja visível após a montagem do componente
+    setIsVisible(true);
+    
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -20,7 +24,7 @@ export default function PublicacoesPage() {
           }
         });
       },
-      { threshold: 0.1 }
+      { threshold: 0.05 } // Reduzido para melhor funcionamento no mobile
     );
 
     if (introRef.current) observer.observe(introRef.current);
@@ -55,12 +59,13 @@ export default function PublicacoesPage() {
 
         <div
           ref={cardsRef}
-          className="
+          className={`
           w-full max-w-7xl mx-auto p-6 sm:p-8 md:p-10
           bg-black/25 backdrop-blur-md 
           border border-white/20 
           rounded-2xl shadow-lg
-          opacity-0 transition-opacity duration-500"
+          transition-opacity duration-500
+          ${isVisible ? 'opacity-100' : 'opacity-0'}`}
         >
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {publications.map((pub) => (
