@@ -22,7 +22,6 @@ export default function HomePage() {
   }, []);
 
   useEffect(() => {
-    // Prefetch pages
     const routes = ["/sobre", "/publicacoes", "/local", "/contato"];
     routes.forEach((route) => {
       router.prefetch(route);
@@ -34,7 +33,6 @@ export default function HomePage() {
 
     const interval = setInterval(() => {
       setProgress((prev) => {
-        // Slow down as we get closer to 90%, wait for model to load for the last 10%
         if (prev >= 90) return prev;
         const increment = Math.max(1, (90 - prev) / 10);
         return prev + increment;
@@ -48,7 +46,7 @@ export default function HomePage() {
     setProgress(100);
     setTimeout(() => {
       setIsLoading(false);
-    }, 500); // Small delay to show 100%
+    }, 500); 
   };
 
   return (

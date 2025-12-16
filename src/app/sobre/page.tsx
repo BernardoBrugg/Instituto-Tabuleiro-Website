@@ -163,49 +163,49 @@ export default function SobrePage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="text-center p-6 bg-white/10 rounded-lg border border-white/20 hover:bg-white/20 transition-all duration-500">
               <h3 className="text-white font-semibold hover:text-white hover:scale-105 transition-all duration-500 cursor-pointer">
-                Marcos Adriano Tortato
+                Mariama Brod Bacci
               </h3>
               <p className="text-white/80">Presidente</p>
             </div>
             <div className="text-center p-6 bg-white/10 rounded-lg border border-white/20 hover:bg-white/20 transition-all duration-500">
               <h3 className="text-white font-semibold hover:text-white hover:scale-105 transition-all duration-500 cursor-pointer">
-                Jorge José Cherem
+                Lauro da Cunha Narciso
               </h3>
               <p className="text-white/80">Vice Presidente</p>
             </div>
             <div className="text-center p-6 bg-white/10 rounded-lg border border-white/20 hover:bg-white/20 transition-all duration-500">
               <h3 className="text-white font-semibold hover:text-white hover:scale-105 transition-all duration-500 cursor-pointer">
-                Haliskarla Moreira de Sá
+                Mônica Araújo de Miranda Gomes
               </h3>
               <p className="text-white/80">Secretária Executiva</p>
             </div>
             <div className="text-center p-6 bg-white/10 rounded-lg border border-white/20 hover:bg-white/20 transition-all duration-500">
               <h3 className="text-white font-semibold hover:text-white hover:scale-105 transition-all duration-500 cursor-pointer">
-                Mônica Araújo de Miranda Gomes
-              </h3>
-              <p className="text-white/80">Conselheira Consultiva</p>
-            </div>
-            <div className="text-center p-6 bg-white/10 rounded-lg border border-white/20 hover:bg-white/20 transition-all duration-500">
-              <h3 className="text-white font-semibold hover:text-white hover:scale-105 transition-all duration-500 cursor-pointer">
-                Mariama Brod Bacci
-              </h3>
-              <p className="text-white/80">Conselheira Consultiva</p>
-            </div>
-            <div className="text-center p-6 bg-white/10 rounded-lg border border-white/20 hover:bg-white/20 transition-all duration-500">
-              <h3 className="text-white font-semibold hover:text-white hover:scale-105 transition-all duration-500 cursor-pointer">
-                André Ivan Tortato
-              </h3>
-              <p className="text-white/80">Conselheiro Fiscal</p>
-            </div>
-            <div className="text-center p-6 bg-white/10 rounded-lg border border-white/20 hover:bg-white/20 transition-all duration-500">
-              <h3 className="text-white font-semibold hover:text-white hover:scale-105 transition-all duration-500 cursor-pointer">
-                Fernando Maciel Bruggemann
-              </h3>
-              <p className="text-white/80">Conselheiro Fiscal</p>
-            </div>
-            <div className="text-center p-6 bg-white/10 rounded-lg border border-white/20 hover:bg-white/20 transition-all duration-500">
-              <h3 className="text-white font-semibold hover:text-white hover:scale-105 transition-all duration-500 cursor-pointer">
                 Hugo Borghezan Mozerle
+              </h3>
+              <p className="text-white/80">Conselheiro Consultivo</p>
+            </div>
+            <div className="text-center p-6 bg-white/10 rounded-lg border border-white/20 hover:bg-white/20 transition-all duration-500">
+              <h3 className="text-white font-semibold hover:text-white hover:scale-105 transition-all duration-500 cursor-pointer">
+                Haliskarla Moreira de Sá
+              </h3>
+              <p className="text-white/80">Conselheira Consultiva</p>
+            </div>
+            <div className="text-center p-6 bg-white/10 rounded-lg border border-white/20 hover:bg-white/20 transition-all duration-500">
+              <h3 className="text-white font-semibold hover:text-white hover:scale-105 transition-all duration-500 cursor-pointer">
+                Luiz Henrique Fragoas Pimenta
+              </h3>
+              <p className="text-white/80">Conselheiro Fiscal</p>
+            </div>
+            <div className="text-center p-6 bg-white/10 rounded-lg border border-white/20 hover:bg-white/20 transition-all duration-500">
+              <h3 className="text-white font-semibold hover:text-white hover:scale-105 transition-all duration-500 cursor-pointer">
+                Kleber Nunes Pereira
+              </h3>
+              <p className="text-white/80">Conselheiro Fiscal</p>
+            </div>
+            <div className="text-center p-6 bg-white/10 rounded-lg border border-white/20 hover:bg-white/20 transition-all duration-500">
+              <h3 className="text-white font-semibold hover:text-white hover:scale-105 transition-all duration-500 cursor-pointer">
+                Jorge José Cherem
               </h3>
               <p className="text-white/80">Conselheiro Fiscal</p>
             </div>

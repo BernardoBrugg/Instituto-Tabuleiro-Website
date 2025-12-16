@@ -44,7 +44,7 @@ export default function PublicacoesPage() {
 
           <div className="flex-grow flex flex-col items-center justify-center text-center">
             <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-white leading-tight hover:scale-105 transition-all duration-500 ease-in-out">
-              Publicações
+              Projetos
             </h1>
             <p className="mt-4 max-w-xl text-white/80 hover:text-white/90 transition-colors duration-500 ease-in-out">
               Explore nossos estudos, relatórios e publicações científicas sobre

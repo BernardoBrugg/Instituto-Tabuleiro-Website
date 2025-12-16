@@ -47,19 +47,8 @@ export default function DesktopHome({ onModelLoaded }: { onModelLoaded?: () => v
           <Header />
           <section className="flex-grow flex items-center w-full">
             <div className="flex flex-row items-center gap-16">
-              <div className="flex flex-col gap-4 text-sm text-white/70">
-                <span className="hover:text-white hover:scale-105 transition-all duration-500 cursor-pointer">
-                  Pesquisa
-                </span>
-                <span className="hover:text-white hover:scale-105 transition-all duration-500 cursor-pointer">
-                  Conservação
-                </span>
-                <span className="hover:text-white hover:scale-105 transition-all duration-500 cursor-pointer">
-                  Comunidade
-                </span>
-              </div>
 
-              <div className="text-left">
+              <div className="text-left flex flex-col justify-center">
                 <Image
                   src="/logo.svg"
                   alt="Instituto Tabuleiro Logo"
@@ -129,7 +118,7 @@ export default function DesktopHome({ onModelLoaded }: { onModelLoaded?: () => v
            hover:bg-black/30 hover:shadow-2xl hover:scale-[1.02] transition-all duration-500"
         >
           <h2 className="text-center text-3xl font-bold text-white mb-6 hover:text-white hover:scale-105 transition-all duration-500 cursor-pointer">
-            Publicações
+            Projetos
           </h2>
           <p className="text-center text-white/80 mb-8 hover:text-white/90 transition-colors duration-500">
             Explore nossos estudos, relatórios e publicações científicas sobre a
