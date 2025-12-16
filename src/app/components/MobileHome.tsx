@@ -152,7 +152,7 @@ export default function MobileHome({ onModelLoaded }: { onModelLoaded?: () => vo
            hover:bg-black/30 hover:shadow-2xl hover:scale-[1.02] transition-all duration-500"
         >
           <h2 className="text-center text-3xl font-bold text-white mb-6 hover:text-white hover:scale-105 transition-all duration-500 cursor-pointer">
-            Publicações
+            Projetos
           </h2>
           <p className="text-center text-white/80 mb-8 hover:text-white/90 transition-colors duration-500">
             Explore nossos estudos, relatórios e publicações científicas sobre a
@@ -163,7 +163,7 @@ export default function MobileHome({ onModelLoaded }: { onModelLoaded?: () => vo
               href="/publicacoes"
               className="px-8 py-3 bg-white/10 border border-white/30 rounded-full hover:bg-white/20 hover:scale-105 hover:shadow-lg transition-all duration-500 text-white hover:text-white cursor-pointer"
             >
-              Ver Publicações
+              Ver Projetos
             </Link>
           </div>
         </div>
