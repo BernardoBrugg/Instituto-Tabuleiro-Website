@@ -7,7 +7,11 @@ import Tucan from "@/components/tucan";
 import scrollIntoView from "scroll-into-view-if-needed";
 import Image from "next/image";
 
-export default function DesktopHome({ onModelLoaded }: { onModelLoaded?: () => void }) {
+export default function DesktopHome({
+  onModelLoaded,
+}: {
+  onModelLoaded?: () => void;
+}) {
   const sobreRef = useRef<HTMLDivElement>(null);
   const publicacoesRef = useRef<HTMLDivElement>(null);
   const localRef = useRef<HTMLDivElement>(null);
@@ -45,31 +49,21 @@ export default function DesktopHome({ onModelLoaded }: { onModelLoaded?: () => v
           hover:bg-black/30 hover:shadow-2xl hover:scale-[1.02] transition-all duration-500"
         >
           <Header />
-          <section className="flex-grow flex items-center w-full">
+          <section className="flex-grow flex items-center justify-center w-full">
             <div className="flex flex-row items-center gap-16">
-
-              <div className="text-left flex flex-col justify-center">
+              <div className="text-center flex flex-col justify-center items-center">
                 <Image
                   src="/logo.svg"
                   alt="Instituto Tabuleiro Logo"
                   width={300}
                   height={90}
-                  className="scale-135 hover:scale-140 transition-all duration-500 cursor-pointer ml-16"
+                  className="scale-135 hover:scale-140 transition-all duration-500 cursor-pointer"
                 />
                 <p className="mt-4 max-w-xl text-white/80 hover:text-white/90 transition-colors duration-500">
                   Uma jornada no coração da Mata Atlântica para encontrar a
                   incrível diversidade que o Parque Estadual da Serra do
                   Tabuleiro abriga. Explore o trabalho da nossa organização.
                 </p>
-                <button
-                  className="mt-8 px-8 py-3 bg-white/10 border border-white/30 rounded-full hover:bg-white/20 hover:scale-105 hover:shadow-lg transition-all duration-500 cursor-pointer"
-                  onClick={() =>
-                    sobreRef.current &&
-                    scrollIntoView(sobreRef.current, { behavior: "smooth" })
-                  }
-                >
-                  Saiba Mais
-                </button>
               </div>
 
               <div className="flex-shrink-0">
@@ -77,6 +71,17 @@ export default function DesktopHome({ onModelLoaded }: { onModelLoaded?: () => v
               </div>
             </div>
           </section>
+          <div className="text-center mt-8">
+            <button
+              className="px-8 py-3 bg-white/10 border border-white/30 rounded-full hover:bg-white/20 hover:scale-105 hover:shadow-lg transition-all duration-500 cursor-pointer"
+              onClick={() =>
+                sobreRef.current &&
+                scrollIntoView(sobreRef.current, { behavior: "smooth" })
+              }
+            >
+              Saiba Mais
+            </button>
+          </div>
         </div>
 
         <div
@@ -93,9 +98,9 @@ export default function DesktopHome({ onModelLoaded }: { onModelLoaded?: () => v
             Sobre o Instituto
           </h2>
           <p className="text-center text-white/80 mb-8 hover:text-white/90 transition-colors duration-500">
-            O Instituto Tabuleiro foi constituída em 1 de novembro
-            de 2015. Nossa missão é auxiliar a gestão do Parque
-            e promover a conservação de seus ecossistemas naturais.
+            O Instituto Tabuleiro foi constituída em 1 de novembro de 2015.
+            Nossa missão é auxiliar a gestão do Parque e promover a conservação
+            de seus ecossistemas naturais.
           </p>
           <div className="text-center">
             <Link
