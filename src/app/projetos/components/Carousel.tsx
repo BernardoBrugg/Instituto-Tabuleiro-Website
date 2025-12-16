@@ -40,7 +40,6 @@ export default function Carousel({
         </div>
       </div>
 
-      {/* Arrow buttons */}
       <button
         onClick={prev}
         className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center bg-black/50 border border-white/30 rounded-full hover:bg-black/70 transition-all text-white"
@@ -54,7 +53,6 @@ export default function Carousel({
         <IoChevronForward size={24} />
       </button>
 
-      {/* Dots indicator */}
       <div className="flex justify-center mt-4">
         {images.map((_, index) => (
           <button

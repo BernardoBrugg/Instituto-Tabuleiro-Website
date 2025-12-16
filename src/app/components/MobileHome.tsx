@@ -39,7 +39,6 @@ export default function MobileHome({ onModelLoaded }: { onModelLoaded?: () => vo
 
   useEffect(() => {
     if (tucanLoaded) {
-      // Wait 1 second after toucan loads, then transition to toucan
       const timer = setTimeout(() => {
         setTransitionPhase("tucan");
       }, 1000);

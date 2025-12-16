@@ -33,7 +33,6 @@ export default function RootLayout({ children }: RootLayoutProps) {
     setBackgroundImage(backgroundImages[nextIndex]);
     localStorage.setItem("backgroundIndex", nextIndex.toString());
 
-    // Preload all background images to improve loading times
     backgroundImages.forEach((src) => {
       const img = new Image();
       img.src = src;
