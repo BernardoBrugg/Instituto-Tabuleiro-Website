@@ -75,8 +75,8 @@ export default function DesktopHome({
             <button
               className="px-8 py-3 bg-white/10 border border-white/30 rounded-full hover:bg-white/20 hover:scale-105 hover:shadow-lg transition-all duration-500 cursor-pointer"
               onClick={() =>
-                sobreRef.current &&
-                scrollIntoView(sobreRef.current, { behavior: "smooth" })
+                localRef.current &&
+                scrollIntoView(localRef.current, { behavior: "smooth", block: "end" })
               }
             >
               Saiba Mais

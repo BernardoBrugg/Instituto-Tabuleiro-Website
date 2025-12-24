@@ -65,7 +65,7 @@ function PreaModel({ onLoaded }: { onLoaded?: () => void }) {
         object={scene}
         scale={[4.5, 4.5, 4.5]}
         position={[0, 0, 0]}
-        rotation={[0, Math.PI / 2, 0]}
+        rotation={[0, Math.PI / 3, 0]}
       />
     </group>
   );
