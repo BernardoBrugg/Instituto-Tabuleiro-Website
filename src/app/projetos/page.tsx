@@ -11,7 +11,6 @@ export default function PublicacoesPage() {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    // Garante que o conteúdo seja visível após a montagem do componente
     setIsVisible(true);
     
     const observer = new IntersectionObserver(

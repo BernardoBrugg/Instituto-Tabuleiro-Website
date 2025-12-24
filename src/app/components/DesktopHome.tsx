@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useEffect, useRef } from "react";
 import Header from "@/components/header";
-import Tucan from "@/components/tucan";
+import Prea from "@/components/prea";
 import scrollIntoView from "scroll-into-view-if-needed";
 import Image from "next/image";
 
@@ -67,7 +67,7 @@ export default function DesktopHome({
               </div>
 
               <div className="flex-shrink-0">
-                <Tucan onLoaded={onModelLoaded} />
+                <Prea onLoaded={onModelLoaded} />
               </div>
             </div>
           </section>
