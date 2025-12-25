@@ -98,7 +98,11 @@ export default function Prea({ onLoaded }: { onLoaded?: () => void }) {
         <pointLight position={[0, 25, -2]} intensity={2.5} />
         <pointLight position={[0, 0, -5]} intensity={1.2} />
         <PreaModel onLoaded={() => setIsLoaded(true)} />
+          
       </Canvas>
+      <p className="mt-0 max-w-sm text-white/70 text-xs text-center">
+                  Preá-de-Moleques-do-Sul (Cavia intermedia): roedor endêmico e criticamente ameaçado da ilha de Moleques do Sul, SC.
+                </p>
     </div>
   );
 }

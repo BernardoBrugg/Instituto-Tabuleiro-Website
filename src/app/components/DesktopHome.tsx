@@ -68,9 +68,7 @@ export default function DesktopHome({
 
               <div className="flex-shrink-0">
                 <Prea onLoaded={onModelLoaded} />
-                <p className="mt-4 max-w-xl text-white/70 text-xs text-center">
-                  Preá-de-Moleques-do-Sul (Cavia intermedia): roedor endêmico e criticamente ameaçado da ilha de Moleques do Sul, SC.
-                </p>
+
               </div>
             </div>
           </section>
