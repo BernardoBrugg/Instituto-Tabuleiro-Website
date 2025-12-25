@@ -1,7 +1,7 @@
 "use client";
 
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
-import { useGLTF, Html, useEnvironment } from "@react-three/drei";
+import { useGLTF, Html } from "@react-three/drei";
 import { useRef, useState, useEffect } from "react";
 import * as THREE from "three";
 
@@ -10,8 +10,6 @@ function PreaModel({ onLoaded }: { onLoaded?: () => void }) {
   const groupRef = useRef<THREE.Group>(null);
   const meshRef = useRef<THREE.Group>(null);
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
-
-  useEnvironment({ preset: "sunset" });
 
   useEffect(() => {
     const handleMouseMove = (event: MouseEvent) => {
@@ -87,20 +85,17 @@ export default function Prea({ onLoaded }: { onLoaded?: () => void }) {
         style={{ height: "100%", width: "100%" }}
         shadows={false}
       >
-        <ambientLight intensity={2.5} />
-        <hemisphereLight args={["#ffffff", "#404040", 2.8]} />
-        <directionalLight position={[10, 10, 10]} intensity={2} />
-        <pointLight position={[0, 0, 5]} intensity={2} />
-        <pointLight position={[-10, 10, 10]} intensity={2} />
-        <pointLight position={[10, -10, 10]} intensity={2} />
-        <pointLight position={[0, 20, 0]} intensity={3.5} />
-        <pointLight position={[0, 15, 5]} intensity={3} />
-        <pointLight position={[0, 25, -2]} intensity={2.5} />
-        <pointLight position={[0, 0, -5]} intensity={1.2} />
+        <ambientLight intensity={0.5} />
+        <hemisphereLight args={["#ffffff", "#404040", 1]} />
+        <directionalLight position={[10, 10, 10]} intensity={8.5} />
+        <pointLight position={[0, 0, 5]} intensity={8.5} />
+        <pointLight position={[-10, 10, 10]} intensity={8.5} />
+        <pointLight position={[10, -10, 10]} intensity={8.5} />
+        <pointLight position={[0, 0, -5]} intensity={8.5} />
         <PreaModel onLoaded={() => setIsLoaded(true)} />
           
       </Canvas>
-      <p className="mt-0 max-w-sm text-white/70 text-xs text-center">
+      <p className="-mt-8 max-w-sm text-white/70 text-xs text-center">
                   Preá-de-Moleques-do-Sul (Cavia intermedia): roedor endêmico e criticamente ameaçado da ilha de Moleques do Sul, SC.
                 </p>
     </div>
