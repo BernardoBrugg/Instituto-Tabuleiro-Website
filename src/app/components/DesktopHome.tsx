@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useEffect, useRef } from "react";
 import Header from "@/components/header";
-import Tucan from "@/components/tucan";
+import Prea from "@/components/prea";
 import scrollIntoView from "scroll-into-view-if-needed";
 import Image from "next/image";
 
@@ -42,7 +42,7 @@ export default function DesktopHome({
       <div className="space-y-8">
         <div
           className="
-          w-full max-w-7xl mx-auto flex flex-col p-6 sm:p-8 md:p-10 min-h-[60vh]
+          w-full max-w-7xl mx-auto flex flex-col p-6 sm:p-8 md:p-10 min-h-[60vh] max-h-[93vh]
           bg-black/25 backdrop-blur-md 
           border border-white/20 
           rounded-2xl shadow-lg
@@ -50,13 +50,13 @@ export default function DesktopHome({
         >
           <Header />
           <section className="flex-grow flex items-center justify-center w-full">
-            <div className="flex flex-row items-center gap-16">
+            <div className="flex flex-col md:flex-row items-center gap-8 md:gap-16">
               <div className="text-center flex flex-col justify-center items-center">
                 <Image
                   src="/logo.svg"
                   alt="Instituto Tabuleiro Logo"
                   width={300}
-                  height={90}
+                  height={50}
                   className="scale-135 hover:scale-140 transition-all duration-500 cursor-pointer"
                 />
                 <p className="mt-4 max-w-xl text-white/80 hover:text-white/90 transition-colors duration-500">
@@ -67,7 +67,8 @@ export default function DesktopHome({
               </div>
 
               <div className="flex-shrink-0">
-                <Tucan onLoaded={onModelLoaded} />
+                <Prea onLoaded={onModelLoaded} />
+
               </div>
             </div>
           </section>
@@ -75,8 +76,8 @@ export default function DesktopHome({
             <button
               className="px-8 py-3 bg-white/10 border border-white/30 rounded-full hover:bg-white/20 hover:scale-105 hover:shadow-lg transition-all duration-500 cursor-pointer"
               onClick={() =>
-                sobreRef.current &&
-                scrollIntoView(sobreRef.current, { behavior: "smooth" })
+                localRef.current &&
+                scrollIntoView(localRef.current, { behavior: "smooth", block: "end" })
               }
             >
               Saiba Mais

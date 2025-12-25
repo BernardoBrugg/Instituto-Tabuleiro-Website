@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import Header from "@/components/header";
-import Tucan from "@/components/tucan";
+import Prea from "@/components/prea";
 import scrollIntoView from "scroll-into-view-if-needed";
 import Image from "next/image";
 
@@ -15,19 +15,19 @@ export default function MobileHome({
   const sobreRef = useRef<HTMLDivElement>(null);
   const publicacoesRef = useRef<HTMLDivElement>(null);
   const localRef = useRef<HTMLDivElement>(null);
-  const [tucanLoaded, setTucanLoaded] = useState(false);
-  const [transitionPhase, setTransitionPhase] = useState<"title" | "tucan">(
+  const [preaLoaded, setPreaLoaded] = useState(false);
+  const [transitionPhase, setTransitionPhase] = useState<"title" | "prea">(
     "title"
   );
 
   useEffect(() => {
-    if (tucanLoaded) {
+    if (preaLoaded) {
       const timer = setTimeout(() => {
-        setTransitionPhase("tucan");
+        setTransitionPhase("prea");
       }, 1000);
       return () => clearTimeout(timer);
     }
-  }, [tucanLoaded]);
+  }, [preaLoaded]);
 
   return (
     <div>
@@ -51,7 +51,7 @@ export default function MobileHome({
                     width={250}
                     height={75}
                     className={`absolute inset-0 m-auto scale-110 hover:scale-115 transition-all duration-500 cursor-pointer ${
-                      transitionPhase === "tucan"
+                      transitionPhase === "prea"
                         ? "opacity-0 -translate-y-12 pointer-events-none"
                         : "opacity-100 translate-y-0"
                     }`}
@@ -59,12 +59,12 @@ export default function MobileHome({
 
                   <div
                     className={`absolute inset-0 flex justify-center items-center transition-opacity duration-2000 ${
-                      transitionPhase === "tucan" ? "opacity-100" : "opacity-0"
+                      transitionPhase === "prea" ? "opacity-100" : "opacity-0"
                     }`}
                   >
-                    <Tucan
+                    <Prea
                       onLoaded={() => {
-                        setTucanLoaded(true);
+                        setPreaLoaded(true);
                         if (onModelLoaded) onModelLoaded();
                       }}
                     />
