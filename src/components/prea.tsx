@@ -6,7 +6,7 @@ import { useRef, useState, useEffect } from "react";
 import * as THREE from "three";
 
 function PreaModel({ onLoaded }: { onLoaded?: () => void }) {
-  const { scene } = useGLTF("/prea.glb");
+  const { scene } = useGLTF("/prea-optimized.glb");
   const groupRef = useRef<THREE.Group>(null);
   const meshRef = useRef<THREE.Group>(null);
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
